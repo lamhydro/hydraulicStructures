@@ -1,0 +1,675 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+<style>
+<!table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+>
+
+tr:nth-child(even) {
+  background-color:SlateBlue;
+}
+</style>
+
+<title>Estructuras Hidraulicas</title>
+</head>
+<body>
+
+<h1 style="text-align:center;background-color:aquamarine;">Estructuras Hidráulicas</h1>
+<h2 style="text-align:center;">Universidad Nacional de Colombia</h2>
+<h3 style="text-align:center;">Facultad de Ingeniería</h3>
+<h3 style="text-align:center;">Departamento de Ingeniería Civil y Agrícola</h3>
+<h3 style="text-align:center;">Bogóta</h3>
+<br>
+
+<hr>
+<h2>Profesor: Luis Alejandro Morales</h2>
+<ul>
+<li>Oficina: 305</li>
+<li>Email: lmoralesm@unal.edu.co</li>
+<li>Website: <a href="https://lamhydro.github.io">https://lamhydro.github.io</a></li>
+<li>Horario de atención para estudiantes: Martes, Miércoles y Jueves de 9:00 am a 12:00 am</li>
+</ul>
+<br>
+<hr>
+
+<!--
+<h2>Monitor:xxxx</h2>
+<ul>
+<li>Email:xxxx</li>
+<li>Horario de atencion de estudiantes:xxxx</li>
+</ul>
+-->
+
+<hr>
+<h2>Generalidades</h2>
+<ul>
+<li>Identificación de la asignatura:2015954</li>
+<li>Duración clase presencial: 4 hrs/semana</li>
+<li>No. de semanas: 16</li>
+<li>No. de créditos: 3</li>
+<li>¿Esta asignatura es validable?: No</li>
+<li>¿Asignatura de libre elección?: No</li>
+<li>Planes de estudio a los que se asocia la asignatura</li>
+<ul>
+<li>2542 Ingeniería Civil    &#x2192; Componente C</li>
+</ul>
+</li>
+<li>Prerequisitos</li>
+<ul>
+<li>Hidráulica Básica (2015961)</li>
+</ul>
+</li>
+<li>GitHub repo: <a href="https://github.com/lamhydro/hydraulicStructures">https://github.com/lamhydro/hydraulicStructures</a></li>
+</ul>
+<hr>
+
+
+<hr>
+<h2>Horario de clases</h2>
+<table align="center" border="1">
+  <tr>
+    <th>HORA</th>
+    <th>LUNES</th>
+    <th>MARTES</th>
+    <th>MIÉRCOLES</th>
+    <th>JUEVES</th>
+    <th>VIERNES</th>
+  </tr>
+  <tr>
+    <td>7:00-8:00</td>
+    <td></td>
+    <td bgcolor='aquamarine'>EH 05 <BR> (Salón 309)</td>
+    <td></td>
+    <td bgcolor='aquamarine'>EH 05 <BR> (Salón 309)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>8:00-9:00</td>
+    <td></td>
+    <td bgcolor='aquamarine'>EH 05 <BR> (Salón 309)</td>
+    <td></td>
+    <td bgcolor='aquamarine'>EH 05 <BR> (Salón 309)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>9:00-10:00</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>10:00-11:00</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>11:00-12:00</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>12:00-13:00</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>13:00-14:00</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>14:00-15:00</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>15:00-16:00</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>16:00-17:00</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>18:00-19:00</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+<hr>
+
+<hr>
+<h2>Descripción</h2>
+Esta asignatura describe y analiza el flujo a superficie libre en canales de sección abierta y cerrada usando las ecuaciones de conservación de la masa, conservación de la energía y conservación de la cantidad de movimiento. Se estudian ecuaciones para calcular las perdidas de energía en canales y el estudio del flujo normal, flujo critico, flujo gradualmente y rápidamente variado. Se estudia el movimiento en estructuras hidráulicas como transiciones, vertederos, compuertas, disipadores de energía y box-culverts. Se hace uso de software especializado para el análisis del flujo en canales y de estructuras hidráulicas. 
+<hr>
+
+<hr>
+<h2>Conceptos previos necesarios</h2>
+El curso requiere los conceptos fundamentales referentes a las leyes de conservación de masa, energía y cantidad de movimiento lineal, y de las ecuaciones para el calculo de la perdida de energía en flujos por gravedad. El curso requiere ademas el uso de herramientas matemáticas y computacionales para la solución de ecuaciones algebraicas, ecuaciones diferenciales y sistemas de ecuaciones. Es deseable que los estudiantes tengan conocimientos básicos en programación de computadores y el manejo de herramientas de métodos numéricos.
+<hr>
+
+<hr>
+<h2>Objetivo</h2>
+Aplicación de las leyes fundamentales de la Mecánica de Fluidos para el estudio del movimiento del flujo a superficie libre en canales. Esto permitirá adquirir las herramientas teóricas para el diseño y análisis de estructuras hidráulicas como canales prismáticos, vertederos, obras de disipación y de protección.  
+<hr>
+
+<hr>
+<h2>Contenido general de la materia</h2>
+
+<h3>1. Conceptos básicos</h3>
+Características geométricas de la sección transversal, tipos de canales, clasificación y regímenes de flujo, distribuciones de velocidad y de presión. Número de Froude, concepto de energía específica y características (flujo crítico-ecuación), accesibilidad del flujo, concepto de Fuerza específica y características. . Fenómeno del resalto hidráulico: tipos y características.
+
+<h3>2. Flujo uniforme</h3>
+Características del flujo, ecuaciones de resistencia: ecuación de Chezy, ecuación de Manning (factores que afectan el coeficiente de rugosidad, métodos y fórmulas para determinar los coeficientes de resistencia C y n). Diagrama de Moody modificado. Cálculo de la profundidad normal, clasificación de la pendiente de un canal. Diseño de canales revestidos y no revestidos: Método de velocidad máxima permisible, método de la fuerza tractiva. Análisis de alcantarillas pluviales y sanitarias.
+<ul>
+<li>Laboratorio 1: Fuerza y energía especifica en un canal rectangular. Resalto hidráulico y compuerta.
+</ul>
+
+<h3>3. Flujo variado</h3>
+Flujo gradualmente variado: ecuación del FGV, Perfiles del flujo gradualmente variado, sección de control, caudal derivado de un estanque a un canal, dibujo y cálculo de perfiles de FGV: método del paso directo, método del paso estándar. Problemas prácticos: entrega de caudales de un embalse a otro embalse en canales de pendiente suave y fuerte. Análisis de transiciones.
+<ul>
+<li>Laboratorio 2: Practica en canal de pendiente variable para el estudio del flujo variado. Uso de HEC-RAS para el estudio de flujo en canales.
+</ul> 
+
+<h3>4. Estructuras hidráulicas</h3>
+Flujo Rápidamente Variado: Compuertas planas y radiales bajo descarga libre y ahogada, vertederos de pared delgada y de pared ancha bajo descarga libre y ahogada, vertederos de cimacio. Estructuras de disipación de energía y análisis del resalto hidráulico. Análisis del flujo en box-culvert.
+<ul>
+<li>Laboratorio 3: Flujo a través de estructuras: canaleta Parshall y vertedero. Uso de HEC-RAS para el diseño de estructuras.
+</ul> 
+
+<hr>
+
+<hr>
+<h2>Evaluación del curso</h2>
+<table align="center" style="width:30%">
+  <tr align="center">
+    <th>EVALUACIÓN</th>
+    <th>VALOR</th>
+  </tr>
+  <tr>
+    <td>Parcial 1</td>
+    <td>20%</td>
+  </tr>
+  <tr>
+    <td>Parcial 2</td>
+    <td>20%</td>
+  </tr>
+  <tr>
+    <td>Parcial 3</td>
+    <td>20%</td>
+  </tr>
+  <tr>
+    <td>Laboratorios</td>
+    <td>40%</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>100%</td>
+  </tr>
+</table>
+La metodología de calificación no se modificara durante el semestre.
+<hr>
+
+<hr>
+<h2>Laboratorios</h2>
+<ul>
+<li>Se harán al menos tres laboratorios durante el curso:  </li>
+<ul>
+<li>Laboratorio 1: Fuerza y energía especifica en un canal rectangular. Resalto hidráulico y compuerta.</li>
+</ul>
+<ul>
+<li>Laboratorio 2: Practica en canal de pendiente variable para el estudio del flujo variado. Uso de HEC-RAS para el estudio de flujo en canales.</li>
+</ul>
+<ul>
+<li>Laboratorio 3: Flujo a través de estructuras: canaleta Parshall y vertedero. Uso de HEC-RAS para el diseño de estructuras.</li>
+</ul>
+</ul>
+<ul>
+<li>Es necesario vestir bata o overol para la realización del laboratorio. Este atuendo puede ser de cualquier color o fabricante. Traer calculadora, lápiz y papel.</li>
+</ul>
+<ul>
+<li>Para la realización del laboratorio se entregara una guia. En cada laboratorio se hará toma de datos en grupos y se entregaran informes. El informe no debe ser de mas de 10 hojas en tamaño de fuente 11 y espacio entre lineas de 1.5. El informe deberá estructurarse así: introducción, metodología o marco teórico, resultados y conclusiones. Como parte de la calificación del laboratorio, este deberá ser sustentado o se hará un quiz sobre este.</li>
+</ul>
+<hr>
+
+
+<hr>
+<h2>Referencias</h2>
+
+<h3>Recomendado</h3>
+<ol>
+<li><strong>Chaudhry, M. H. (2013). Applied Hydraulic Transients. Springer New York.</strong></li>
+<li><strong>Chow, V. T. (1959). Open-channel Hydraulics. McGraw-Hill.</strong></li>
+<li><strong>French, R. H. (2007). Open Channel Hydraulics. Water Resources Publications, LLC.</strong></li>
+</ol>
+<h3>Otros</h3>
+<ol>
+<li>Henderson, F. M. (1966). Open Channel Flow. Macmillan.</li>
+<li>Çengel, Y. A., & Cimbala, J. M. (2010). Fluid Mechanics: Fundamentals and Applications: McGraw-Hill Higher Education.</li>
+<li>Shames, I. H. (1992). Mechanics of Fluids: McGraw-Hill.</li>
+<li>Street, R. L., Watters, G. Z., & Vennard, J. K. (1995). Elementary Fluid Mechanics: Wiley.</li>
+<li>Streeter, V. L., & Wylie, E. B. (1979). Fluid mechanics: McGraw-Hill.</li>
+</ol>
+<hr>
+
+<hr>
+<h2>Programa</h2>
+<table>
+  <tr>
+    <th>CLASE No.</th>
+    <th>SEMANA</th>
+    <th>HORAS</th>
+    <th>UNIDAD</th>
+    <th>TEMA</th>
+    <th>APUNTES</th>
+    <th>TAREAS</th>
+    <th>OTROS</th>
+  </tr>
+<!-- Week 1-->
+  <tr>
+    <td>01</td>
+    <td rowspan="2">Ago/8 - Ago/11</td>
+    <td>2</td>
+    <td>1. Conceptos básicos</td>
+    <td>Introducción:Objetivos, metodología y evaluación. Caracterización geométrica  de la sección transversal y tipos de canales.</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>02</td>
+    <td>2</td>
+    <td>1. Conceptos básicos</td>
+    <td>Clasificación y regímenes de flujo, distribuciones de velocidad y de presión. Numero de Froude.</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+<!-- Week 2 -->
+  <tr>
+    <td>03</td>
+    <td rowspan="2">Ago/14 - Ago/18</td>
+    <td>2</td>
+    <td>1. Conceptos básicos</td>
+    <td>Concepto de energía específica y características (flujo crítico-ecuación), accesibilidad del flujo, concepto de fuerza específica y características.</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>04</td>
+    <td>2</td>
+    <td>1. Conceptos básicos</td>
+    <td>Fenómeno del resalto hidráulico: tipos y características.</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+<!-- Week 3-->
+  <tr>
+    <td>05</td>
+    <td rowspan="2">Ago/22 - Ago/25</td>
+    <td>2</td>
+    <td>2. Flujo uniforme</td>
+    <td>Características del flujo, ecuaciones de resistencia: ecuación de Chezy, ecuación de Manning (factores que afectan el coeficiente de rugosidad, métodos y fórmulas para determinar los coeficientes de resistencia C y n). </td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>06</td>
+    <td>2</td>
+    <td>2. Flujo uniforme</td>
+    <td>Diagrama de Moody modificado. Cálculo de la profundidad normal y clasificación de la pendiente de un canal.</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+<!-- Week 4-->
+  <tr>
+    <td>07</td>
+    <td rowspan="2">Ago/28 - Sep/01</td>
+    <td>2</td>
+    <td>2. Flujo uniforme</td>
+    <td>Diseño de canales revestidos y no revestidos: método de la velocidad máxima permisible y de la fuerza tractiva.</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>08</td>
+    <td>2</td>
+    <td>2. Flujo uniforme</td>
+    <td>Análisis de alcantarillas pluviales y sanitarias.</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+<!-- Week 5-->
+  <tr>
+    <td>09</td>
+    <td rowspan="2">Sep/04 - Sep/8</td>
+    <td>2</td>
+    <td>1. Conceptos básicos, 2. Flujo uniforme</td>
+    <td><mark>Taller: Conceptos básicos y flujo uniforme</mark></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+ <tr style="background-color:#FF0000">
+    <td>10</td>
+    <td>2</td>
+    <td></td>
+    <td>Parcial 1</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+<!-- Week 6-->
+  <tr>
+    <td>11</td>
+    <td rowspan="2">Sep/04 - Sep/8</td>
+    <td>2</td>
+    <td>3. Flujo variado</td>
+    <td>Flujo gradualmente variado: ecuación del FGV.</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+ <tr>
+    <td>12</td>
+    <td>2</td>
+    <td>3. Flujo variado</td>
+    <td>Perfiles del flujo gradualmente variado, sección de control.</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+<!-- Week 7-->
+  <tr>
+    <td>13</td>
+    <td rowspan="2">Sep/11 - Sep/15</td>
+    <td>2</td>
+    <td>3. Flujo variado</td>
+    <td>Caudal derivado de un estanque a un canal.</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>14</td>
+    <td>2</td>
+    <td>3. Flujo variado</td>
+    <td>Dibujo y cálculo de perfiles de FGV: método del paso directo.</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+<!-- Week 8-->
+  <tr>
+    <td>15</td>
+    <td rowspan="2">Sep/25 - Sep/29</td>
+    <td>2</td>
+    <td>3. Flujo variado</td>
+    <td>Dibujo y cálculo de perfiles de FGV: método del paso estándar.</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>2</td>
+    <td>3. Flujo variado</td>
+    <td> Problemas prácticos: entrega de caudales de un embalse a otro embalse en canales de pendiente suave y fuerte.</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+<!-- Recess week-->
+ <tr style="background-color:#884EA0">
+    <td colspan="8">Semana receso (Sep/18 - Sep/22) </td>
+</tr>
+<!-- Week 9-->
+  <tr>
+    <td>17</td>
+    <td rowspan="2">Sep/25 - Sep/29</td>
+    <td>2</td>
+    <td>3. Flujo variado</td>
+    <td>Análisis de transiciones.</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>18</td>
+    <td>2</td>
+    <td>3. Flujo variado</td>
+    <td><mark>Taller: Flujo variado</mark></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+<!-- Week 10-->
+  <tr style="background-color:#FF0000">
+    <td>19</td>
+    <td rowspan="2">Oct/02 - Oct/06</td>
+    <td>2</td>
+    <td></td>
+    <td>Parcial 2</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>20</td>
+    <td>2</td>
+    <td>4. Estructuras hidráulicas</td>
+    <td>Compuertas planas y radiales bajo descarga libre y ahogada.</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+<!-- Week 11-->
+  <tr>
+    <td>21</td>
+    <td rowspan="2">Oct/09 - Oct/13</td>
+    <td>2</td>
+    <td>4. Estructuras hidráulicas</td>
+    <td>Vertederos de pared delgada bajo descarga libre y ahogada.</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>22</td>
+    <td>2</td>
+    <td>4. Estructuras hidráulicas</td>
+    <td>Vertederos de pared ancha bajo descarga libre y ahogada. Vertederos de cimacio.</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+<!-- Week 12-->
+  <tr>
+    <td>23</td>
+    <td rowspan="2">Oct/09 - Oct/13</td>
+    <td>2</td>
+    <td>4. Estructuras hidráulicas</td>
+    <td>Estructuras de disipación de energía. </td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>24</td>
+    <td>2</td>
+    <td>4. Estructuras hidráulicas</td>
+    <td>Análisis de flujo en Box-culverts.</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+<!-- Week 13-->
+  <tr>
+    <td>25</td>
+    <td rowspan="2">Oct/17 - Oct/20</td>
+    <td>2</td>
+    <td>4. Estructuras hidráulicas</td>
+    <td><mark>Taller: Estructuras hidráulicas</mark></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr style="background-color:#FF0000">
+    <td>26</td>
+    <td>2</td>
+    <td></td>
+    <td>Parcial 3</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+<!-- Week 14-->
+  <tr>
+    <td>27</td>
+    <td rowspan="2">Nov/14 - Nov/17</td>
+    <td>2</td>
+    <td></td>
+    <td><u>Laboratorio 1: Fuerza y energía especifica en un canal rectangular. Resalto hidráulico y compuerta.</u></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+ <tr>
+    <td>28</td>
+    <td>2</td>
+    <td></td>
+    <td><u>Laboratorio 1: Fuerza y energía especifica en un canal rectangular. Resalto hidráulico y compuerta.</u></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr> 
+<!-- Week 15-->
+  <tr>
+    <td>29</td>
+    <td rowspan="2">Nov/20 - Nov/24</td>
+    <td>2</td>
+    <td></td>
+    <td><u>Laboratorio 2: Practica en canal de pendiente variable para el estudio del flujo variado. Uso de HEC-RAS para el estudio de flujo en canales.</u></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>30</td>
+    <td>2</td>
+    <td></td>
+    <td><u>Laboratorio 2: Practica en canal de pendiente variable para el estudio del flujo variado. Uso de HEC-RAS para el estudio de flujo en canales.</u></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+<!-- Week 16-->
+  <tr>
+    <td>31</td>
+    <td rowspan="2">Nov/20 - Nov/24</td>
+    <td>2</td>
+    <td></td>
+    <td><u>Laboratorio 3: Flujo a través de estructuras: canaleta Parshall y vertedero. Uso de HEC-RAS para el diseño de estructuras.</u></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>32</td>
+    <td>2</td>
+    <td></td>
+    <td><u>Laboratorio 3: Flujo a través de estructuras: canaleta Parshall y vertedero. Uso de HEC-RAS para el diseño de estructuras.</u></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+
+</table>
+<h3>Notas:</h3>
+<ol>
+
+<!--<li>* El parcial 4 evaluara los últimos temas vistos en clase. Sin embargo, los conocimientos son acumulativos y se espera que el estudiante este en la capacidad de emplear conceptos de temas vistos con anterioridad.</li>
+ <li> Los parciales que están en rojo serán reemplazados por la siguiente programación. Note que en los días en rojo no habrá clase ya que serán reemplazados por los parciales los sábados según la programación. </li> -->
+</ol>
+
+<hr>
+
+<hr>
+<h2>Programación de parciales</h2>
+<table align="center">
+  <tr align="center">
+    <th>PARCIAL</th>
+    <th>FECHA</th>
+    <th>HORA</th>
+    <th>EDIFICIO</th>
+    <th>SALÓN</th>
+  </tr>
+  <tr>
+    <td>Parcial 1</td>
+    <td>Martes, 11-Sep-2023</td>
+    <td>7am - 9am</td>
+    <td>Ed. 409 (Lab. Hidráulica)</td>
+    <td>309</td>
+  </tr>
+  <tr>
+    <td>Parcial 2</td>
+    <td>Martes, 09-Oct-2023</td>
+    <td>7am - 9am</td>
+    <td>Ed. 409 (Lab. Hidráulica)</td>
+    <td>309</td>
+  </tr>
+  <tr>
+    <td>Parcial 3</td>
+    <td>Martes, 06-Nov-2023</td>
+    <td>7am - 9am</td>
+    <td>Ed. 409 (Lab. Hidráulica)</td>
+    <td>309</td>
+  </tr>
+</table>
+
+</body>
+</html> 
