@@ -715,9 +715,100 @@ Roca dura  & 6.1 \\
 Diseñar un canal para transportar un caudal de 6.91 m$^3$ s$^{-1}$. El canal sera excavado en arcilla resistente con una pendiente del terreno $S_o = 0.00318$.
 \end{eje}
 
-\subsubsection{Metodo de la fuerza tractiva}
- 
- 
+\subsubsection{M\'etodo de la fuerza tractiva}
+La erosion de las part\'iculas del material de la secci\'on de un canal se puede comprender mejor a trav\'es del an\'alisis de la \emph{fuerza tractiva}. El an\'alsis de fuerzas indica que una part\'icula de material permanecer\'a estable si las fuerzas de cohesi\'on son mayores que las \emph{fuerzas de arrastre} debido a los esfuerzos cortantes ejercidos por el flujo sobre las paredes y el fondo del canal. Para flujo uniforme en una canal recto, la fuerza tractiva es igual a la componente del peso del fluido en la direcci\'on del flujo. 
+
+Si se considera un canal recto de longitud $L$, con un area mojada $A$ y con pendiente $S_o$, el peso del volumen del fluido para $L$ es $\gamma A L$. De acuerdo con esto, la componente de dicho peso en la direccion del flujo es $\gamma A L S_o$ (note que para $S_o$ pequeñas, $\sin \theta \approx \tan \theta \approx S_o$). La fuerza tractiva por unidad de area o el esfuerzo cortante sobre el area mojada del tramo de canal $PL$, se define como $\tau_o = \frac{\gamma A L S_o}{PL} = \gamma R S_o$, donde $R$ es el radio hidr\'aulico. Para canales muy anchos, $R \simeq y$ por lo tanto $\tau_o = \gamma y S_o$. La distribuci\'on de esfuerzos cortantes o de fuerza tractiva por unidad de area sobre la seccion del canal no es uniforme. Sin embargo se ha encontrado que para canales trapezoidales anchos, $\tau_o = \gamma y S_o$ en el fondo y en las paredes $\tau_o = 0.76 \gamma y S_o$. 
+
+El esfuerzo cortante necesario para iniciar el movimiento de una part\'icula se denomina \emph{esfuerzo cortante cr\'itico} $\tau_c$ y depende del tamano del material y de la cohesion de las part\'iculas. Note que este esfuerzo es mayor para part\'iculas sobre el fondo que para part\'iculas sobre las paredes del canal, ya que el movimiento de esas ultimas esta influeciada por la gravedad. Considere una part\'icula de material sobre la pared de un canal cuyo angulo de inclinacion de la pared del canal es $\theta$, $a$ es el area efectiva de la part\'icula, $W_s$ es el peso sumergido de la part\'icula, $\phi$ es el angulo de reposo del materia  y $\tau_s$ es el esfuerzo cortante sobre las paredes del canal  (ver figura~\ref{fnor7}). 
+
+% Fig 9.2 Chau 
+\begin{figure}[h!]
+\centering
+%\includegraphics[width=8cm]{fnor7.png}
+\caption{Fuerzas actuantes sobre una part\'icula en una pared de un canal (tomado de \cite{Chau}).}
+\label{fnor7}
+\end{figure}
+
+Existen dos fuerzas que tienden a desequilibrar la part\'icula: 1) la fuerza tractiva que se calcula como $\tau_s a$, y la componente del peso de la part\'icula a lo largo de la pared del canal $W_s \sin \theta$. La resultante de estas dos fuerzas es:
+
+$$
+R=\sqrt{W_s^2 \sin^2 \theta + a^2 \tau_s^2}   
+$$
+
+La fuerza normal a la pared del canal se calcula como $W_s \cos \theta \tan \phi$ y evita el movimiento de la part\'icula. La part\'icula est\'a en equilibrio si las fuerzas que propician el movimiento son iguales a las que se oponen a este, por lo que:
+
+$$
+W_s \cos \theta \tan \phi =\sqrt{W_s^2 \sin^2 \theta + a^2 \tau_s^2}   
+$$
+
+Despejando de esta ecuaci\'on $\tau_s$, se tiene:
+
+\begin{equation}
+\tau_s = \frac{W_s}{a}\cos \theta \tan \phi \sqrt{1-\frac{\tan^2 \theta}{\tan^2 \phi}}
+\label{fni16}
+\end{equation}
+
+La fuerza que impide el movimiento sobre una superficie nivelada es $W_s \tan \phi = a \tau_l$, donde $\tau_l$ es el esfuerzo cortante que impide el movimiento de la particula sobre una superficie nivelada. Por lo tanto:
+
+$$
+\tau_l = \frac{W_s}{a} \tan \phi
+$$
+
+Reemplanzado en la ecuaci\'on~\ref{fni16}, se tiene:
+\begin{equation}
+K = \frac{\tau_s}{\tau_l} = \cos \theta \sqrt{1-\frac{\tan^2 \theta}{\tan^2 \phi}}
+\label{fni17}
+\end{equation}
+
+donde $K$ se denomina el factor de reducci\'on del esfuerzo critico sobre las paredes del canal.
+
+Los efectos debido al angulo de reposo del material se consideran para material grueso sin cohesi\'on. Para material fino cohesivo y no cohesivo, la componente del peso a lo largo de la pared es muy pequeña con respecto a las fuerzas cohesivas por lo cual se pueden despreciar. La figura~\ref{fnor8} muestra el angulo de reposo para material no cohesivo cuyo diametro, para mas del 25\% del peso total del material, es $>5$ mm. Los esfuerzos criticos para material no cohesivo se muestran en la figura~\ref{fnor9} y para material cohesivo en la figura~\ref{fnor10} para canales rectos. Estos valores de $\tau_c$ deben reducirse en 10\% para canales algo sinuosos, en 25\% para canales moderadamente sinuosos y en 40\% para canales muy sinuosos. 
+
+% Fig 9.3 Chau 
+\begin{figure}[h!]
+\centering
+%\includegraphics[width=8cm]{fnor8.png}
+\caption{Angulo de reposo ($\phi$) para material no cohesivo  para particulas de diametro $> 5$ mm (tomado de \cite{Chau}).}
+\label{fnor8}
+\end{figure}
+
+% Fig 9.4 Chau 
+\begin{figure}[h!]
+\centering
+%\includegraphics[width=8cm]{fnor9.png}
+\caption{Esfuerzo cortante critico ($\tau_c$) para material no cohesivo (tomado de \cite{Chau}).}
+\label{fnor9}
+\end{figure}
+
+% Fig 9.5 Chau 
+\begin{figure}[h!]
+\centering
+%\includegraphics[width=8cm]{fnor10.png}
+\caption{Esfuerzo cortante critico ($\tau_c$) para material cohesivo (tomado de \cite{Chau}).}
+\label{fnor10}
+\end{figure}
+
+El diseño de canales por el m\'etodo de la fuerza tractiva involucra la escogencia de una secci\'on transversal de tal manera que la fuerza tractiva por unidad de \'area ($\tau_s$) actuante sobre las paredes del canal sea igual al esfuerzo critico ($\tau_c$) que resistiria el material del canal. Al final de la escogencia de la secci\'on, se debe cumplir que el esfuerzo cortante sobre el fondo del canal sea menor que $\tau_c$.
+
+\begin{alg}{Diseño de canales erosionables: m\'etodo de la fuerza tractiva}{alg1}
+\begin{enumerate}
+\item Leer el caudal $Q$ de diseño, la pendiente del canal $S_o$ y $C_o$.
+\item \label{st2} De acuerdo con el material excavado, seleccione el $n$ de Manning, el $s$ de acuerdo con la tabla~\ref{ta5}, el angulo de reposo $\phi$ del material a partir de la figura~\ref{fnor8} y el esfuerzo critico $\tau_c$ de la figura~\ref{fnor9}, si el material es no cohesivo, o de la figura~\ref{fnor10} si el material es cohesivo. Ajustar $\tau_c$ dependiendo de la sinusoidad del canal. 
+\item Para material no cohesivo, calcular el factor de reducci\'on $K$ a partir de la ecuaci\'on~\ref{fni17}. Calcular el esfuerzo cortante de las paredes $\tau_s = K \tau_c$.
+\item Igualar $\tau_s$, calculado en paso anterior, a $0.76\gamma y S_o$, de donde se determina $y=\frac{\tau_s}{0.76 \gamma S_o}$. 
+\item De la ecuaci\'on de Manning (ecuaci\'on~\ref{eq16}), calcular $b$.
+\item Revisa que el esfuerzo cortante en el fondo, $\tau = \gamma y S_o$, es menor que el $\tau_c$ determinado en el paso~\ref{st2}. Si se cumple ir a el paso~\ref{st5}, si no volver al paso~\ref{st2}. 
+\item \label{st5} Agregar un borde libre $F_b$ al canal.
+\end{enumerate}
+\end{alg}
+
+% Ej 9.3 Chau 
+\begin{eje}{}{eje1}
+Diseñar un canal trapezoidal recto para transportar un caudal de 10 m$^3$ s$^{-1}$. El canal sera excavado en grava fina de diametro 8 mm  con una pendiente del terreno $S_o = 0.00318$. Asumir que las particulas de grava son casi redondas y la concentraci\'on de sedimentos en suspensi\'on en el flujo es baja. 
+\end{eje}
+
+
 
 % REFERENCES
 \bibliographystyle{plain} % We choose the "plain" reference style
