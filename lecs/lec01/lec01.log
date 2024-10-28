@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.9.7)  27 OCT 2024 17:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.9.7)  28 OCT 2024 13:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -761,7 +761,7 @@ File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 File: ./figs/fig1.jpeg Graphic file (type jpg)
 <use ./figs/fig1.jpeg>
 Package pdftex.def Info: ./figs/fig1.jpeg  used on input line 55.
-(pdftex.def)             Requested size: 227.62204pt x 103.66814pt.
+(pdftex.def)             Requested size: 455.2979pt x 207.37201pt.
 
 [1
 
@@ -769,122 +769,176 @@ Package pdftex.def Info: ./figs/fig1.jpeg  used on input line 55.
 <./figs/fig2a.jpg, id=58, 2601.72pt x 3886.52pt>
 File: ./figs/fig2a.jpg Graphic file (type jpg)
 <use ./figs/fig2a.jpg>
-Package pdftex.def Info: ./figs/fig2a.jpg  used on input line 88.
-(pdftex.def)             Requested size: 227.64894pt x 340.04594pt.
+Package pdftex.def Info: ./figs/fig2a.jpg  used on input line 82.
+(pdftex.def)             Requested size: 242.82503pt x 362.69986pt.
 <./figs/fig2b.jpg, id=59, 266.9975pt x 190.7125pt>
 File: ./figs/fig2b.jpg Graphic file (type jpg)
 <use ./figs/fig2b.jpg>
-Package pdftex.def Info: ./figs/fig2b.jpg  used on input line 95.
-(pdftex.def)             Requested size: 227.64894pt x 162.61272pt.
-<./figs/fig3.jpeg, id=60, 1284.8pt x 750.805pt>
+Package pdftex.def Info: ./figs/fig2b.jpg  used on input line 89.
+(pdftex.def)             Requested size: 242.82503pt x 173.4526pt.
+<./figs/fig21a.jpg, id=60, 666.23906pt x 499.8675pt>
+File: ./figs/fig21a.jpg Graphic file (type jpg)
+<use ./figs/fig21a.jpg>
+Package pdftex.def Info: ./figs/fig21a.jpg  used on input line 101.
+(pdftex.def)             Requested size: 161.8885pt x 121.45798pt.
+<./figs/fig21b.jpg, id=61, 1028.84375pt x 513.92pt>
+File: ./figs/fig21b.jpg Graphic file (type jpg)
+<use ./figs/fig21b.jpg>
+Package pdftex.def Info: ./figs/fig21b.jpg  used on input line 108.
+(pdftex.def)             Requested size: 161.8885pt x 80.8644pt.
+<./figs/fig21c.jpg, id=62, 281.05pt x 410.53375pt>
+File: ./figs/fig21c.jpg Graphic file (type jpg)
+<use ./figs/fig21c.jpg>
+Package pdftex.def Info: ./figs/fig21c.jpg  used on input line 115.
+(pdftex.def)             Requested size: 161.8885pt x 236.47478pt.
+<./figs/fig3.jpeg, id=63, 1284.8pt x 750.805pt>
 File: ./figs/fig3.jpeg Graphic file (type jpg)
 <use ./figs/fig3.jpeg>
-Package pdftex.def Info: ./figs/fig3.jpeg  used on input line 111.
-(pdftex.def)             Requested size: 227.62204pt x 133.00818pt.
+Package pdftex.def Info: ./figs/fig3.jpeg  used on input line 131.
+(pdftex.def)             Requested size: 505.89pt x 295.63103pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [3] [4 <./figs/fig2a.jpg> <./figs/fig2b.jpg>]
-<./figs/fig4.jpeg, id=68, 1284.8pt x 517.935pt>
+<./figs/fig4.jpeg, id=71, 1284.8pt x 517.935pt>
 File: ./figs/fig4.jpeg Graphic file (type jpg)
 <use ./figs/fig4.jpeg>
-Package pdftex.def Info: ./figs/fig4.jpeg  used on input line 136.
-(pdftex.def)             Requested size: 227.62204pt x 91.7543pt.
- [5 <./figs/fig3.jpeg> <./figs/fig4.jpeg>]
-<./figs/fig41.jpeg, id=74, 1284.8pt x 1203.49625pt>
+Package pdftex.def Info: ./figs/fig4.jpeg  used on input line 156.
+(pdftex.def)             Requested size: 505.89pt x 203.93797pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[5 <./figs/fig21a.jpg> <./figs/fig21b.jpg> <./figs/fig21c.jpg>] [6 <./figs/fig3
+.jpeg>]
+<./figs/fig41.jpeg, id=80, 1284.8pt x 1203.49625pt>
 File: ./figs/fig41.jpeg Graphic file (type jpg)
 <use ./figs/fig41.jpeg>
-Package pdftex.def Info: ./figs/fig41.jpeg  used on input line 172.
-(pdftex.def)             Requested size: 227.62204pt x 213.2043pt.
+Package pdftex.def Info: ./figs/fig41.jpeg  used on input line 192.
+(pdftex.def)             Requested size: 455.2979pt x 426.48206pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./figs/fig5.jpeg, id=75, 1284.8pt x 910.40125pt>
+<./figs/fig5.jpeg, id=81, 1284.8pt x 910.40125pt>
 File: ./figs/fig5.jpeg Graphic file (type jpg)
 <use ./figs/fig5.jpeg>
-Package pdftex.def Info: ./figs/fig5.jpeg  used on input line 186.
-(pdftex.def)             Requested size: 227.62204pt x 161.28131pt.
+Package pdftex.def Info: ./figs/fig5.jpeg  used on input line 206.
+(pdftex.def)             Requested size: 455.2979pt x 322.6182pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./figs/fig6.jpeg, id=76, 594.22pt x 566.115pt>
+<./figs/fig6.jpeg, id=82, 594.22pt x 566.115pt>
 File: ./figs/fig6.jpeg Graphic file (type jpg)
 <use ./figs/fig6.jpeg>
-Package pdftex.def Info: ./figs/fig6.jpeg  used on input line 196.
+Package pdftex.def Info: ./figs/fig6.jpeg  used on input line 216.
 (pdftex.def)             Requested size: 227.62204pt x 216.85358pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[6] [7 <./figs/fig41.jpeg> <./figs/fig5.jpeg>] [8 <./figs/fig6.jpeg>] [9]
-<./figs/fig7.jpeg, id=90, 1284.8pt x 451.6875pt>
+[7 <./figs/fig4.jpeg>] [8 <./figs/fig41.jpeg>] [9 <./figs/fig5.jpeg>] [10 <./fi
+gs/fig6.jpeg>]
+<./figs/fig7.jpeg, id=96, 1284.8pt x 451.6875pt>
 File: ./figs/fig7.jpeg Graphic file (type jpg)
 <use ./figs/fig7.jpeg>
-Package pdftex.def Info: ./figs/fig7.jpeg  used on input line 309.
-(pdftex.def)             Requested size: 227.62204pt x 80.01828pt.
-<./figs/fig8.jpeg, id=91, 1264.725pt x 542.025pt>
+Package pdftex.def Info: ./figs/fig7.jpeg  used on input line 329.
+(pdftex.def)             Requested size: 455.2979pt x 160.06415pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./figs/fig8.jpeg, id=97, 1264.725pt x 542.025pt>
 File: ./figs/fig8.jpeg Graphic file (type jpg)
 <use ./figs/fig8.jpeg>
-Package pdftex.def Info: ./figs/fig8.jpeg  used on input line 328.
-(pdftex.def)             Requested size: 227.62204pt x 97.55202pt.
-
-Overfull \hbox (33.19489pt too wide) in paragraph at lines 333--334
+Package pdftex.def Info: ./figs/fig8.jpeg  used on input line 348.
+(pdftex.def)             Requested size: 455.2979pt x 195.12057pt.
+[11]
+Overfull \hbox (33.19489pt too wide) in paragraph at lines 353--354
 []\OT1/cmr/m/n/10.95 Si la cur-vatura de las lin-eas de flujo es $\OML/cmm/m/it
 /10.95 r$ \OT1/cmr/m/n/10.95 y la ve-loci-dad en un punto es $\OML/cmm/m/it/10.
 95 V$\OT1/cmr/m/n/10.95 , ten-emos que la $[] =
  []
 
-[10 <./figs/fig7.jpeg> <./figs/fig8.jpeg>]
-<./figs/fig118.jpeg, id=96, 1284.8pt x 570.13pt>
+[12 <./figs/fig7.jpeg> <./figs/fig8.jpeg>]
+<./figs/fig118.jpeg, id=105, 1284.8pt x 570.13pt>
 File: ./figs/fig118.jpeg Graphic file (type jpg)
 <use ./figs/fig118.jpeg>
-Package pdftex.def Info: ./figs/fig118.jpeg  used on input line 357.
+Package pdftex.def Info: ./figs/fig118.jpeg  used on input line 377.
 (pdftex.def)             Requested size: 227.62204pt x 101.00087pt.
- [11 <./figs/fig118.jpeg>] [12]
-[13] [14]
-<./figs/fig28.jpeg, id=113, 1016.79875pt x 1284.8pt>
+<./figs/fig31.jpeg, id=106, 1284.8pt x 623.32875pt>
+File: ./figs/fig31.jpeg Graphic file (type jpg)
+<use ./figs/fig31.jpeg>
+Package pdftex.def Info: ./figs/fig31.jpeg  used on input line 388.
+(pdftex.def)             Requested size: 455.2979pt x 220.88853pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[13 <./figs/fig118.jpeg>] [14 <./figs/fig31.jpeg>]
+<./figs/fig32.jpeg, id=116, 1284.8pt x 704.6325pt>
+File: ./figs/fig32.jpeg Graphic file (type jpg)
+<use ./figs/fig32.jpeg>
+Package pdftex.def Info: ./figs/fig32.jpeg  used on input line 451.
+(pdftex.def)             Requested size: 455.2979pt x 249.70009pt.
+ [15 <./figs/fig32.jpeg>]
+[16]
+<./figs/fig37.jpeg, id=124, 1284.8pt x 1027.84pt>
+File: ./figs/fig37.jpeg Graphic file (type jpg)
+<use ./figs/fig37.jpeg>
+Package pdftex.def Info: ./figs/fig37.jpeg  used on input line 512.
+(pdftex.def)             Requested size: 455.2979pt x 364.23488pt.
+ [17 <./figs/fig37.jpeg>]
+<./figs/fig28.jpeg, id=128, 1016.79875pt x 1284.8pt>
 File: ./figs/fig28.jpeg Graphic file (type jpg)
 <use ./figs/fig28.jpeg>
-Package pdftex.def Info: ./figs/fig28.jpeg  used on input line 551.
-(pdftex.def)             Requested size: 227.62204pt x 287.61679pt.
+Package pdftex.def Info: ./figs/fig28.jpeg  used on input line 571.
+(pdftex.def)             Requested size: 455.2979pt x 575.29242pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[15]
-<./figs/fig29.jpeg, id=117, 1284.8pt x 475.7775pt>
+[18]
+<./figs/fig29.jpeg, id=132, 1284.8pt x 475.7775pt>
 File: ./figs/fig29.jpeg Graphic file (type jpg)
 <use ./figs/fig29.jpeg>
-Package pdftex.def Info: ./figs/fig29.jpeg  used on input line 561.
-(pdftex.def)             Requested size: 227.62204pt x 84.28593pt.
+Package pdftex.def Info: ./figs/fig29.jpeg  used on input line 581.
+(pdftex.def)             Requested size: 404.71353pt x 149.8707pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[16 <./figs/fig28.jpeg>] [17 <./figs/fig29.jpeg>]
-<./figs/fig211.jpeg, id=124, 1284.8pt x 445.665pt>
+[19]
+<./figs/fig211.jpeg, id=137, 1284.8pt x 445.665pt>
 File: ./figs/fig211.jpeg Graphic file (type jpg)
 <use ./figs/fig211.jpeg>
-Package pdftex.def Info: ./figs/fig211.jpeg  used on input line 632.
-(pdftex.def)             Requested size: 227.62204pt x 78.95137pt.
- [18 <./figs/fig211.jpeg>]
-[19]
-<./figs/fig711.jpeg, id=132, 1084.05pt x 1284.8pt>
+Package pdftex.def Info: ./figs/fig211.jpeg  used on input line 652.
+(pdftex.def)             Requested size: 404.71353pt x 140.38521pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[20] [21]
+<./figs/fig711.jpeg, id=144, 1084.05pt x 1284.8pt>
 File: ./figs/fig711.jpeg Graphic file (type jpg)
 <use ./figs/fig711.jpeg>
-Package pdftex.def Info: ./figs/fig711.jpeg  used on input line 741.
-(pdftex.def)             Requested size: 227.62204pt x 269.75716pt.
- [20 <./figs/fig711.jpeg>] (./lec01.bbl) [21] (./lec01.aux)
+Package pdftex.def Info: ./figs/fig711.jpeg  used on input line 761.
+(pdftex.def)             Requested size: 404.71353pt x 479.66194pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[22] (./lec01.bbl) [23] [24 <./figs/fig28.jpeg>] [25 <./figs/fig29.jpeg> <./fig
+s/fig211.jpeg>] [26 <./figs/fig711.jpeg>] (./lec01.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 22637 strings out of 480185
- 479737 string characters out of 5894214
- 778188 words of memory out of 5000000
- 40171 multiletter control sequences out of 15000+600000
+ 22702 strings out of 480185
+ 480962 string characters out of 5894214
+ 778236 words of memory out of 5000000
+ 40230 multiletter control sequences out of 15000+600000
  479855 words of font info for 69 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
  90i,9n,99p,2150b,510s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -903,10 +957,10 @@ m/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on lec01.pdf (21 pages, 2986916 bytes).
+Output written on lec01.pdf (26 pages, 4163605 bytes).
 PDF statistics:
- 207 PDF objects out of 1000 (max. 8388607)
- 112 compressed objects within 2 object streams
+ 229 PDF objects out of 1000 (max. 8388607)
+ 123 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 232 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 262 words of extra memory for PDF output out of 10000 (max. 10000000)
 

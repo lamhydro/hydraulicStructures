@@ -6,21 +6,21 @@
 \contentsline {subsection}{\numberline {2.1}Flujo permanente y no permanente}{5}{}%
 \contentsline {subsection}{\numberline {2.2}Flujo uniforme y no uniforme}{5}{}%
 \contentsline {subsection}{\numberline {2.3}Flujo laminar y flujo turbulento}{6}{}%
-\contentsline {subsection}{\numberline {2.4}Flujo subcr\'tico, cr\'itico y supercr\'itico}{6}{}%
-\contentsline {section}{\numberline {3}Distribuci\'on de velocidades}{6}{}%
-\contentsline {subsection}{\numberline {3.1}Coeficiente de energ\'ia}{7}{}%
-\contentsline {subsection}{\numberline {3.2}Coeficiente de cantidad de movimiento}{8}{}%
-\contentsline {section}{\numberline {4}Distribuci\'on de presiones}{9}{}%
-\contentsline {subsection}{\numberline {4.1}Fluido est\'atico}{9}{}%
-\contentsline {subsection}{\numberline {4.2}Flujo horizontal y paralelo}{9}{}%
-\contentsline {subsection}{\numberline {4.3}Flujo paralelo en un canal inclinado}{10}{}%
-\contentsline {subsection}{\numberline {4.4}Flujo curvil\'ineo}{10}{}%
-\contentsline {section}{\numberline {5}Conservaci\'on de la energ\'ia}{11}{}%
-\contentsline {subsection}{\numberline {5.1}Energ\'ia espec\'ifica}{12}{}%
-\contentsline {subsection}{\numberline {5.2}Flujo cr\'itico}{13}{}%
-\contentsline {subsection}{\numberline {5.3}Fen\'omenos locales}{14}{}%
-\contentsline {section}{\numberline {6}Conservaci\'on de la cantidad de movimiento}{14}{}%
-\contentsline {subsection}{\numberline {6.1}Fuerza especifica}{15}{}%
-\contentsline {section}{\numberline {7}Casos de aplicaci\'on de la conservaci\'on de la energ\'ia y del momento lineal}{15}{}%
-\contentsline {subsection}{\numberline {7.1}Trancisi\'on en un canal}{15}{}%
-\contentsline {subsection}{\numberline {7.2}Resalto hidr\'aulico}{18}{}%
+\contentsline {subsection}{\numberline {2.4}Flujo subcr\'tico, cr\'itico y supercr\'itico}{7}{}%
+\contentsline {section}{\numberline {3}Distribuci\'on de velocidades}{7}{}%
+\contentsline {subsection}{\numberline {3.1}Coeficiente de energ\'ia}{8}{}%
+\contentsline {subsection}{\numberline {3.2}Coeficiente de cantidad de movimiento}{9}{}%
+\contentsline {section}{\numberline {4}Distribuci\'on de presiones}{10}{}%
+\contentsline {subsection}{\numberline {4.1}Fluido est\'atico}{11}{}%
+\contentsline {subsection}{\numberline {4.2}Flujo horizontal y paralelo}{11}{}%
+\contentsline {subsection}{\numberline {4.3}Flujo paralelo en un canal inclinado}{11}{}%
+\contentsline {subsection}{\numberline {4.4}Flujo curvil\'ineo}{12}{}%
+\contentsline {section}{\numberline {5}Conservaci\'on de la energ\'ia}{13}{}%
+\contentsline {subsection}{\numberline {5.1}Energ\'ia espec\'ifica}{14}{}%
+\contentsline {subsection}{\numberline {5.2}Flujo cr\'itico}{16}{}%
+\contentsline {subsection}{\numberline {5.3}Fen\'omenos locales}{16}{}%
+\contentsline {section}{\numberline {6}Conservaci\'on de la cantidad de movimiento}{17}{}%
+\contentsline {subsection}{\numberline {6.1}Fuerza especifica}{18}{}%
+\contentsline {section}{\numberline {7}Casos de aplicaci\'on de la conservaci\'on de la energ\'ia y del momento lineal}{18}{}%
+\contentsline {subsection}{\numberline {7.1}Trancisi\'on en un canal}{18}{}%
+\contentsline {subsection}{\numberline {7.2}Resalto hidr\'aulico}{20}{}%
