@@ -14,13 +14,13 @@
 \contentsline {subsection}{\numberline {4.1}Fluido est\'atico}{9}{}%
 \contentsline {subsection}{\numberline {4.2}Flujo horizontal y paralelo}{9}{}%
 \contentsline {subsection}{\numberline {4.3}Flujo paralelo en un canal inclinado}{10}{}%
-\contentsline {subsection}{\numberline {4.4}Flujo curvilineo}{10}{}%
-\contentsline {section}{\numberline {5}Conservacion de la energ\'ia}{11}{}%
+\contentsline {subsection}{\numberline {4.4}Flujo curvil\'ineo}{10}{}%
+\contentsline {section}{\numberline {5}Conservaci\'on de la energ\'ia}{11}{}%
 \contentsline {subsection}{\numberline {5.1}Energ\'ia espec\'ifica}{12}{}%
-\contentsline {subsection}{\numberline {5.2}Flujo critico}{13}{}%
-\contentsline {subsection}{\numberline {5.3}Fen\'omenos locales}{13}{}%
-\contentsline {section}{\numberline {6}Conservacion de la cantidad de movimiento}{14}{}%
+\contentsline {subsection}{\numberline {5.2}Flujo cr\'itico}{13}{}%
+\contentsline {subsection}{\numberline {5.3}Fen\'omenos locales}{14}{}%
+\contentsline {section}{\numberline {6}Conservaci\'on de la cantidad de movimiento}{14}{}%
 \contentsline {subsection}{\numberline {6.1}Fuerza especifica}{15}{}%
 \contentsline {section}{\numberline {7}Casos de aplicaci\'on de la conservaci\'on de la energ\'ia y del momento lineal}{15}{}%
 \contentsline {subsection}{\numberline {7.1}Trancisi\'on en un canal}{15}{}%
-\contentsline {subsection}{\numberline {7.2}Resalto hidr\'aulico}{17}{}%
+\contentsline {subsection}{\numberline {7.2}Resalto hidr\'aulico}{18}{}%

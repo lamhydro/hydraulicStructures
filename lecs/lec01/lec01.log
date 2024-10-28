@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.16)  19 JUN 2024 14:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.9.7)  27 OCT 2024 17:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -647,7 +647,11 @@ Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
 )
 \c@tcb@cnt@eje=\count318
 \c@tcb@cnt@alg=\count319
- (./lec01.aux)
+ (./lec01.aux
+
+LaTeX Warning: Label `Ejemplo:eje3' multiply defined.
+
+)
 \openout1 = `lec01.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
@@ -664,8 +668,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
 LaTeX Font Info:    ... okay on input line 41.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
 LaTeX Font Info:    ... okay on input line 41.
-
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count320
 \scratchdimen=\dimen282
@@ -776,7 +779,7 @@ Package pdftex.def Info: ./figs/fig2b.jpg  used on input line 95.
 <./figs/fig3.jpeg, id=60, 1284.8pt x 750.805pt>
 File: ./figs/fig3.jpeg Graphic file (type jpg)
 <use ./figs/fig3.jpeg>
-Package pdftex.def Info: ./figs/fig3.jpeg  used on input line 112.
+Package pdftex.def Info: ./figs/fig3.jpeg  used on input line 111.
 (pdftex.def)             Requested size: 227.62204pt x 133.00818pt.
 
 
@@ -786,13 +789,13 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <./figs/fig4.jpeg, id=68, 1284.8pt x 517.935pt>
 File: ./figs/fig4.jpeg Graphic file (type jpg)
 <use ./figs/fig4.jpeg>
-Package pdftex.def Info: ./figs/fig4.jpeg  used on input line 137.
+Package pdftex.def Info: ./figs/fig4.jpeg  used on input line 136.
 (pdftex.def)             Requested size: 227.62204pt x 91.7543pt.
  [5 <./figs/fig3.jpeg> <./figs/fig4.jpeg>]
 <./figs/fig41.jpeg, id=74, 1284.8pt x 1203.49625pt>
 File: ./figs/fig41.jpeg Graphic file (type jpg)
 <use ./figs/fig41.jpeg>
-Package pdftex.def Info: ./figs/fig41.jpeg  used on input line 173.
+Package pdftex.def Info: ./figs/fig41.jpeg  used on input line 172.
 (pdftex.def)             Requested size: 227.62204pt x 213.2043pt.
 
 
@@ -801,7 +804,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <./figs/fig5.jpeg, id=75, 1284.8pt x 910.40125pt>
 File: ./figs/fig5.jpeg Graphic file (type jpg)
 <use ./figs/fig5.jpeg>
-Package pdftex.def Info: ./figs/fig5.jpeg  used on input line 187.
+Package pdftex.def Info: ./figs/fig5.jpeg  used on input line 186.
 (pdftex.def)             Requested size: 227.62204pt x 161.28131pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -809,7 +812,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <./figs/fig6.jpeg, id=76, 594.22pt x 566.115pt>
 File: ./figs/fig6.jpeg Graphic file (type jpg)
 <use ./figs/fig6.jpeg>
-Package pdftex.def Info: ./figs/fig6.jpeg  used on input line 197.
+Package pdftex.def Info: ./figs/fig6.jpeg  used on input line 196.
 (pdftex.def)             Requested size: 227.62204pt x 216.85358pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -818,37 +821,73 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <./figs/fig7.jpeg, id=90, 1284.8pt x 451.6875pt>
 File: ./figs/fig7.jpeg Graphic file (type jpg)
 <use ./figs/fig7.jpeg>
-Package pdftex.def Info: ./figs/fig7.jpeg  used on input line 310.
+Package pdftex.def Info: ./figs/fig7.jpeg  used on input line 309.
 (pdftex.def)             Requested size: 227.62204pt x 80.01828pt.
 <./figs/fig8.jpeg, id=91, 1264.725pt x 542.025pt>
 File: ./figs/fig8.jpeg Graphic file (type jpg)
 <use ./figs/fig8.jpeg>
-Package pdftex.def Info: ./figs/fig8.jpeg  used on input line 330.
+Package pdftex.def Info: ./figs/fig8.jpeg  used on input line 328.
 (pdftex.def)             Requested size: 227.62204pt x 97.55202pt.
 
-Overfull \hbox (38.66989pt too wide) in paragraph at lines 335--336
+Overfull \hbox (33.19489pt too wide) in paragraph at lines 333--334
 []\OT1/cmr/m/n/10.95 Si la cur-vatura de las lin-eas de flujo es $\OML/cmm/m/it
-/10.95 r$ \OT1/cmr/m/n/10.95 y la ve-loci-dada en un punto es $\OML/cmm/m/it/10
-.95 V$\OT1/cmr/m/n/10.95 , ten-emos que la $[] =
+/10.95 r$ \OT1/cmr/m/n/10.95 y la ve-loci-dad en un punto es $\OML/cmm/m/it/10.
+95 V$\OT1/cmr/m/n/10.95 , ten-emos que la $[] =
  []
 
-[10 <./figs/fig7.jpeg> <./figs/fig8.jpeg>] [11]
+[10 <./figs/fig7.jpeg> <./figs/fig8.jpeg>]
+<./figs/fig118.jpeg, id=96, 1284.8pt x 570.13pt>
+File: ./figs/fig118.jpeg Graphic file (type jpg)
+<use ./figs/fig118.jpeg>
+Package pdftex.def Info: ./figs/fig118.jpeg  used on input line 357.
+(pdftex.def)             Requested size: 227.62204pt x 101.00087pt.
+ [11 <./figs/fig118.jpeg>] [12]
+[13] [14]
+<./figs/fig28.jpeg, id=113, 1016.79875pt x 1284.8pt>
+File: ./figs/fig28.jpeg Graphic file (type jpg)
+<use ./figs/fig28.jpeg>
+Package pdftex.def Info: ./figs/fig28.jpeg  used on input line 551.
+(pdftex.def)             Requested size: 227.62204pt x 287.61679pt.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[12] [13] [14] [15] [16] [17] [18] [19] (./lec01.bbl) [20] (./lec01.aux)
+[15]
+<./figs/fig29.jpeg, id=117, 1284.8pt x 475.7775pt>
+File: ./figs/fig29.jpeg Graphic file (type jpg)
+<use ./figs/fig29.jpeg>
+Package pdftex.def Info: ./figs/fig29.jpeg  used on input line 561.
+(pdftex.def)             Requested size: 227.62204pt x 84.28593pt.
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[16 <./figs/fig28.jpeg>] [17 <./figs/fig29.jpeg>]
+<./figs/fig211.jpeg, id=124, 1284.8pt x 445.665pt>
+File: ./figs/fig211.jpeg Graphic file (type jpg)
+<use ./figs/fig211.jpeg>
+Package pdftex.def Info: ./figs/fig211.jpeg  used on input line 632.
+(pdftex.def)             Requested size: 227.62204pt x 78.95137pt.
+ [18 <./figs/fig211.jpeg>]
+[19]
+<./figs/fig711.jpeg, id=132, 1084.05pt x 1284.8pt>
+File: ./figs/fig711.jpeg Graphic file (type jpg)
+<use ./figs/fig711.jpeg>
+Package pdftex.def Info: ./figs/fig711.jpeg  used on input line 741.
+(pdftex.def)             Requested size: 227.62204pt x 269.75716pt.
+ [20 <./figs/fig711.jpeg>] (./lec01.bbl) [21] (./lec01.aux)
+
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 22594 strings out of 480185
- 478822 string characters out of 5894213
- 778149 words of memory out of 5000000
- 40133 multiletter control sequences out of 15000+600000
+ 22637 strings out of 480185
+ 479737 string characters out of 5894214
+ 778188 words of memory out of 5000000
+ 40171 multiletter control sequences out of 15000+600000
  479855 words of font info for 69 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
- 90i,9n,99p,2096b,510s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 90i,9n,99p,2150b,510s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/alejandro/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095
 .600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr
@@ -864,10 +903,10 @@ m/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on lec01.pdf (20 pages, 2616437 bytes).
+Output written on lec01.pdf (21 pages, 2986916 bytes).
 PDF statistics:
- 199 PDF objects out of 1000 (max. 8388607)
- 110 compressed objects within 2 object streams
+ 207 PDF objects out of 1000 (max. 8388607)
+ 112 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 207 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 232 words of extra memory for PDF output out of 10000 (max. 10000000)
 
