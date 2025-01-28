@@ -389,12 +389,156 @@ De la figura~\ref{fig8} tenemos que $z_2 = z_1 - S_o \left( x_2 - x_1 \right)$, 
 La ecuaci\'on~\ref{eq15} determina la localizaci\'on $x$ de la secci\'on 2 a partir de unos valores dados de $Q$, $S_o$ y $n$, a partir de condiciones conocidas de flujo en la secci\'on 1, y a partir de unos valores dados de $y_2$ para calcular $E_2$. A partir de la secci\'on conocida 1, se inicia el c\'alculo sistem\'atico de $x$ para valores dados de $y$ aguas abajo ($x$ positivo) o hacia aguas arriba ($x$ negativo) dependiendo de donde se encuentre la secci\'on inicial. Note que el signo del c\'alculo es tenido en cuenta en la ecuaci\'on~\ref{eq15}. Para el c\'alculo es importante utilizar el mayor n\'umero de cifras significat\'ivas teniendo en cuenta que el segundo t\'ermino del lado derecho de la ecuaci\'on~\ref{eq15} es muy pequeño. Algunas desventajas de este m\'etodo son: 1) no c\'alculo de la profundidad de agua $y$ por lo que ser\'ia necesario interpolar para saber $y$ en una posici\'on  determinada, 2) en canales con geometr\'ia variable ser\'ia necesario determinar la geometr\'ia mediante un proceso iterat\'ivo ya que esta no se conoce en 2. 
 
 A continuaci\'on se describe un algoritmo para la implementaci\'on del m\'etodo de paso directo.
+\begin{alg}{C\'alculo del FVG en canales prism\'aticos o circulares: M\'etodo del paso directo}{alg1}
+\begin{enumerate}
+\item Leer: $Q$, $n$, $So$, $\alpha$, $y_1$ y $x_1$, donde $y_1$ es la profundida de flujo en la secci\'on de control y $x_1$ es la abscisa de la secci\'on de control.  En caso de canales prism\'aticos leer: $b$, $\theta_1$ (\'angulo de la banca izquierda) y $\theta_2$ (\'angulo de la banca izquierda). En el caso de secciones circulares, leer $r$ (radio). Note que en caso de que en la secci\'on de control la profundidad $y_1 = y_c$, el valor de $y_1$ no se lee; se har\'a igual a $y_c$ una ves sea calculada.   
+\item Calcular la profundidad normal ($y_n$) usando la ecuaci\'on de Manning y la profundidad cr\'itica ($y_c$) usando la ecuaci\'on de n\'umero de Froude. 
+\item Con base en $y_n$, $y_c$ y $So$ determinarl el tipo de perfil de flujo.
+\item Establecer si la secci\'on de control de flujo esta aguas arriba o aguas abajo. 
+\item Leer $\Delta y$, el cual es el paso para aumetar o disminuir (dependiendo del perfil) la profundidad. $\Delta y$ se establece como la diferencia entre $y_1$ y la profundidad que alcanzar\'a el perfil de flujo hacia aguas arriba o hacia aguas abajo, puede ser $y_n$ o $y_c$. Note que $\Delta y$ debe asegurar que existan un n\'umero suficiente de puntos para graficar el perfil. 
+\item Elaborar una tabla con las siguientes columnas: $y$ (profundidad de flujo), $A$ (\'Area), $R$ (Radio hidr\'aulico), $V$ (Velocidad de flujo), $S_f$ (gradiente de energ\'ia) y $E$ (Energ\'ia). La primera fila de la tabla se calcula con los valores conocidos en la secci\'on de control $1$. Para la segunda fila (la secci\'on siguiente $2$),  la profundidad $y_1$ se disminuye o se aumenta (dependiendo del tipo de perfil) en un valor $\Delta y$, $y_2 = y_1 \pm \Delta y $. A partir de $y_2$ se calculan los valores de la tabla para completar la fila 1. 
+\item A partir de los valores calculados en la tabla para la fila $i$ y la fila $i+1$, se calcula la abscisa $x_{i+1}$ usando la ecuaci\'on~\ref{eq15}. El c\'alculo de los valores de $x$ se hace hasta que:
+    \begin{itemize}
+        \item $y>=1.05 y_n$ en caso de que $y$ disminuya y se aproxime a $y_n$.
+        \item $y<=0.98 y_n$ en caso de que $y$ aumente y se aproxime a $y_n$.
+        \item $y>=1.05 y_c$ en caso de que $y$ disminuya y se aproxime a $y_c$.
+        \item $y<=0.98 y_c$ en caso de que $y$ aumente y se aproxime a $y_c$.
+    \end{itemize}
 
+\item Con las parejas de valores ($x$, $y$) graficar el perfil de flujo. Otras parejas de puntos utiles para graficar son: ($x$, $z$), ($x$, $y_n$) y ($x$, $y_c$). En las dos ultimas los valores de $y_n$ y $y_c$ se repiten. Note que $z_{i+1} = z_{i+1} + So \left( x_{i+1} - x_i \right)$
+
+\end{enumerate}
+\end{alg}
+
+% Ej 6.1 Chau 
+\begin{eje}{}{eje5}
+ Para una canal trapezoidal con las siguientes caracter\'isticas:
+ \begin{itemize}
+     \item Pendiente de fondo $So =$ 0.001
+     \item Caudal $Q = $ 30 m$^3$ s$^{-1}$
+     \item Ancho de base $b =$ 10 m
+     \item Coeficiente de rugosidad de Manning $n = $ 0.013
+     \item Profundidad en la secci\'on de control aguas abajo $y_1 = $ 5 m en $x_1 =$ 0 m.
+     \item $\alpha = $1
+ \end{itemize}
+ calcular el perfil de la l\'amina de agua utilizando el m\'etodo del paso directo. 
+\end{eje}
 
 
 
 
 \subsubsection{M\'etodo del paso estandard}
+El m\'etodo del paso directo no es adecuado si queremos determinar la profundidad en un secci\'on determinada o si el canal tiene una geometria irregular como es el caso de canales naturales. El \emph{m\'etodo del paso estandard} aparece como el procedimiento m\'as adecuado para el c\'alculo de perfiles de flujo en cualquier tipo de canales. Este m\'etodo es el implementado dentro del programa  HEC-RAS, el cual es un c\'odigo de uso libre muy popular desarrollado por el U.S. Army Corps of Engineers. 
+
+Al observar la figura~\ref{fig9}, se desea calcular la profundidad $y_2$ en una seccion $x_2$ a partir de un caudal Q, una pendiente $So$, una rugosidad de Manning $n$ y una geometr\'ia conocidas en un tramo de canal incluyendo, una profundidad conocida  $y_1$ en $x_1$.
+
+% Chau fig 6.3
+\begin{figure}[h]
+\centering
+\includegraphics[width=8cm]{fig63.jpeg}
+\caption{C\'alculo de la profundidad de flujo en una secci\'on determinada (tomado de \cite{Chau}).}
+\label{fig9}
+\end{figure}
+
+Partiendo de la profundidad $y_1$ y de $Q$ se puede calcular la $V_1$ a trav\'es de $V_1=Q/A_1$, donde $A_1$ es la secci\'on transversal en 1. Se puede entonces calcular la energ\'ia total en 1 $H_1$ como:
+
+\begin{equation}
+    H_1 = z_1 + y_1 + \alpha_1 \frac{V_1^2}{2g}
+\label{eq16}
+\end{equation}
+
+y por lo tanto, la energ\'ia total en 2 $H_2$ es:
+\begin{equation}
+    H_2 = H_1 - h_f
+\label{eq17}
+\end{equation}
+donde $h_f$ son las perdidas de energ\'ia entre las secciones 1 y 2. La ecuaci\'on~\ref{eq17}, en funci\'on del gradiente de energ\'ia, se puede expresar como:
+\begin{equation}
+    H_2 = H_1 - \frac{1}{2}\left( S_{f_1} + S_{f_2} \right)\left( x_2 - x_1 \right)
+\label{eq18}
+\end{equation}
+Reemplazando por los terminos de la energ\'ia total para $H_2$ en la ecuaci\'on~\ref{eq18} y re-organizando se tiene:
+\begin{equation}
+y_2 + \frac{\alpha_2 Q^2}{2g A_2^2} + \frac{1}{2}S_{f_2} \left( x_2 - x_1 \right) + z_2 - H_1 + \frac{1}{2}S_{f_1}\left( x_2 - x_1 \right) = 0
+\label{eq19}
+\end{equation}
+
+En la ecuaci\'on~\ref{eq19}, $A_2$ y $S_{f_2}$ son funciones de la variable desconocida $y_2$. Los otros t\'erminos son dados o han sido calculados para la secci\'on 1. De acuerdo con esto, $y_2$ es econtrado tras solucionar la ecuaci\'on no linear:
+\begin{equation}
+f\left( y_2 \right) = y_2 + \frac{\alpha_2 Q^2}{2g A_2^2} + \frac{1}{2}S_{f_2} \left( x_2 - x_1 \right) + z_2 - H_1 + \frac{1}{2}S_{f_1}\left( x_2 - x_1 \right)
+\label{eq20}
+\end{equation}
+
+La ecuaci\'on~\ref puede ser resuelta por medio de el \emph{m\'etodo de Newton-Raphson} o el \emph{m\'etodo de la bisecci\'on}. A continuaci\'on se discutir\'a el m\'etodo de Newton-Raphson para resolver la ecuaci\'on~\ref{eq20} y para esto es necesario el c\'alculo de la derivada de $f\left( y_2 \right)$ con respecto a $y_2$ como:
+\begin{equation}
+    \frac{df}{y_2} = 1 - \frac{\alpha_2 Q^2}{g A_2^3}\frac{dA_2}{dy_2} + \frac{1}{2}\left( x_2 - x_1 \right)\frac{d}{dy_2}\left( \frac{Q^2 n^2}{C_o^2 A_2^2 R_2^{4/3}} \right)
+\label{eq21}
+\end{equation}
+Resolviendo la derivada de el \'ultimo termino de la ecuaci\'on~\ref{eq21}, se tiene:
+
+\begin{equation}
+\begin{split}
+    \frac{d f}{dy_2}\left( \frac{Q^2 n^2}{C_o^2 A_2^2 R_2^{4/3}} \right) &= \frac{-2 Q^2 n^2}{C_o^2 A_2^3 R_2^{4/3}}\frac{d A^2}{dy_2} - \frac{4}{3}\frac{Q^2 n^2}{C_o^2 A_2^3 R_2^{4/3}}\frac{1}{R_2}\frac{d R_2}{dy_2} \\
+                                                                       &= \frac{-2 Q^2 n^2}{C_o^2 A_2^2 R_2^{4/3}}\frac{B_2}{A_2} - \frac{4}{3}\frac{Q^2 n^2}{C_o^2 A_2^3 R_2^{4/3}}\frac{1}{R_2}\frac{d R_2}{dy_2} \\
+                                                                       &= -2 \left( S_{f_2}\frac{B_2}{A_2} + \frac{2}{3}\frac{S_{f_2}}{R_2}\frac{d R_2}{dy_2} \right)
+\end{split}
+\label{eq22}
+\end{equation}
+
+Reemplazando la ecuaci\'on~\ref{eq22} en la ecuaci\'on~\ref{eq21}, se tiene:
+\begin{equation}
+    \frac{df}{y_2} = 1 - \frac{\alpha_2 Q^2}{g A_2^3}B_2 - \frac{1}{2}\left( x_2 - x_1 \right)\left( S_{f_2}\frac{B_2}{A_2} + \frac{2}{3}\frac{S_{f_2}}{R_2}\frac{d R_2}{dy_2} \right)
+\label{eq23}
+\end{equation}
+
+La derivada $\frac{d R_2}{dy_2}$ del \'ultimo termino de la ecuaci\'on~\ref{eq23} es:
+\begin{equation}
+\begin{split}
+    \frac{d R_2}{d y_2} &= \frac{d}{d y_2} \left( \frac{A_2}{P_2} \right)\\
+                        &= \frac{1}{P_2}\frac{d A_2}{d y_2} + A_2 \frac{d}{d y_2}\left( \frac{1}{P_2} \right)\\
+                        &= \frac{B_2}{P_2} - \frac{A_2}{P_2^2}\frac{d P_2}{d y_2} 
+\end{split}
+\label{eq24}
+\end{equation}
+
+Note que para un canal rectangular $\frac{d P_2}{d y_2} = 2$ y para un canal trapezoidal $\frac{d P_2}{d y_2} = 2\sqrt{1+s^2}$ en donde $s$ es la pendiente de las bancas del canal ($s$H:1V).
+A continuaci\'on se describe un algoritmo para la implementaci\'on del m\'etodo de paso estandar.
+\begin{alg}{C\'alculo del FVG en canales: M\'etodo del paso estandar}{alg1}
+\begin{enumerate}
+\item Leer: $Q$, $n$, $So$, $\alpha$, $y_1$ y $x_1$, donde $y_1$ es la profundida de flujo en la secci\'on de control y $x_1$ es la abscisa de la secci\'on de control.  En caso de canales prism\'aticos leer: $b$, $\theta_1$ (\'angulo de la banca izquierda) y $\theta_2$ (\'angulo de la banca izquierda). En el caso de secciones circulares, leer $r$ (radio). Para canales iregulares, es necesario leer parejas de puntos $(x_i, y_i, z_i)$ donde $i=1\cdots n$ para $n$ puntos y valores de $n_i$ (rugosidad de Manning) para $n-1$ segmentos; esto se hace para $ns$ secciones. Para el caso de canales naturales no se lee $So$, esta se calcula con base en los puntos m\'as bajos entre secciones adyacentes. Para cualquier tipo de canal es tambien necesario leer el paso en $x$ $\Delta x$. Note que en caso de que en la secci\'on de control la profundidad $y_0 = y_c$, el valor de $y_0$ no se lee; se har\'a igual a $y_c$ una ves sea calculada.   
+\item Calcular $H_1$ usando la ecuaci\'on~\ref{eq16}
+\item Calcuar un inicial aproximado de $y_2$, que se llamara $y_2^*$. $y_2^*$ se calcula a partir de la ecuaci\'on~\ref{eq6} como
+    $$
+    y_2^* = y_1 + f(x_1,y_1)dx = y_1 + f(x_1,y_1)(x_2-x_1)
+    $$
+    donde $f(x,y)$ se calcula usando la ecuaci\'on~\ref{eq7}. Note que $x_2 = x_1+\Delta x$. Alternativamente, para pasos de c\'alculo mayores a 2 (e.g 3,4 $\cdots$) $y_2^*$ se puede calcular extrapolando los puntos de $y$ para secciones anteriores. Por ejemplo, $y_3^*$ se calcula extrapolando los puntos $y_2$ y $y_1$. 
+\item \label{i4} Para el valor estimado de $y_2^*$, calcular para la secci\'on 2: $B_2^*$, $A_2^*$, $R_2^*$ y $S_f{_2^*}$.
+\item Con base en los valores estimados en el paso anterior, calcular $f\left( y_2^* \right)$ usando la ecuaci\'on~\ref{eq20} y calcular $\left( \frac{df}{y_2} \right)^* $ usando la ecuaci\'on~\ref{eq23} y la ecuaci\'on~\ref{eq24}.
+\item \label{i7} Implementando el m\'etodo de Newton-Raphson, calcular un mejor valor de $y_2$ (valor definitivo de $y$ en la secci\'on 2) usando:
+    $$
+    y_2 = y_2^* - \frac{f\left( y_2^* \right)}{\left( \frac{df}{y_2} \right)^*}
+    $$
+    Este calculo se hace iterativamente hasta que $\left| y_2 - y_2^* \right| \leq \epsilon$  donde la tolerancia $\epsilon \approx 0.00001$. Note que en cada iteraci\'on $y_2^* = y_2$ por lo que es neceario volver los pasos del ~\ref{i4} ~\ref{i7} hasta que el criterio de convergencia $\left| y_2 - y_2^* \right| \leq \epsilon$ se cumpla. 
+
+\item Con las parejas de valores ($x$, $y$) graficar el perfil de flujo. Otras parejas de puntos utiles para graficar son: ($x$, $z$), ($x$, $y_n$) y ($x$, $y_c$), donde $y_n$ y $y_c$ son la profundidad normal y critica respectivamente. 
+\end{enumerate}
+\end{alg}
+
+% Ej 6.2 Chau 
+\begin{eje}{}{eje6}
+ Para una canal trapezoidal con las siguientes caracter\'isticas:
+ \begin{itemize}
+     \item Pendiente de fondo $So =$ 0.001
+     \item Caudal $Q = $ 30 m$^3$ s$^{-1}$
+     \item Ancho de base $b =$ 10 m
+     \item Coeficiente de rugosidad de Manning $n = $ 0.013
+     \item Profundidad en la secci\'on de control aguas abajo $y_1 = $ 5 m en $x_1 =$ 0 m.
+     \item $\alpha = $1
+ \end{itemize}
+ calcular el perfil de la l\'amina de agua utilizando el m\'etodo del paso estandard. 
+\end{eje}
+
+
 
 % REFERENCES
 \bibliographystyle{plain} % We choose the "plain" reference style
