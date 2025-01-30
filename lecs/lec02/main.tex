@@ -1,0 +1,658 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{comment} % enables the use of multi-line comments (\ifx \fi) 
+\usepackage{lipsum} %This package just generates Lorem Ipsum filler text. 
+\usepackage{fullpage} % changes the margin
+\usepackage[a4paper, total={7in, 10in}]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb,amsthm}  % assumes amsmath package installed
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{verbatim}
+\usepackage[numbered]{mcode}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{cancel}
+\usepackage[table,xcdraw]{xcolor}
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{arrows,calc,positioning}
+
+    \tikzset{
+        block/.style = {draw, rectangle,
+            minimum height=1cm,
+            minimum width=1.5cm},
+        input/.style = {coordinate,node distance=1cm},
+        output/.style = {coordinate,node distance=4cm},
+        arrow/.style={draw, -latex,node distance=2cm},
+        pinstyle/.style = {pin edge={latex-, black,node distance=2cm}},
+        sum/.style = {draw, circle, node distance=1cm},
+    }
+
+    \tikzset{every picture/.style={line width=0.75pt}}
+\usepackage{mdframed}
+\usepackage[shortlabels]{enumitem}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage{standalone}
+\setlength{\parindent}{0pt}
+
+
+\usepackage{listings}
+
+\definecolor{codeblue}{RGB}{33,135,180}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codeblue},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+    
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+
+\newenvironment{ejemplo}[2][Ejemplo]
+    { \begin{mdframed}[backgroundcolor=gray!20] \textbf{#1 #2} \\}
+    {  \end{mdframed}}
+
+% Define solution environment
+\newenvironment{solution}
+    {\textit{Solution:}}
+    {}
+
+\renewcommand{\qed}{\quad\qedsymbol}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\renewcommand{\theenumi}{\alph{enumi})}
+%Header-Make sure you update this information!!!!
+\noindent
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{minipage}{3.5cm}
+    \includegraphics[width=3.5cm]{Images/logounal.png} % LOGOTIPO
+\end{minipage} 
+\hspace{10pt}
+\begin{minipage}{0.75\textwidth}
+
+    {\Large \textbf{Flujo Crítico} \hspace{6cm} \textbf{}}\vspace{1ex}
+    
+    \textit{Apuntes de clase}\hspace{8.25cm} Grupo 1\\
+    \normalsize Departamento de Ingeniería Civil y Agrícola \hspace{3.6cm} 2024-2S\\
+    Docente: Luis Alejandro Morales Marín\hspace{1.9cm}Estructuras Hidráulicas\\
+    \noindent\rule{5in}{2.8pt}
+\end{minipage} \vspace{10pt} 
+
+
+
+\vspace{1ex}
+
+El flujo crítico se presenta cuando la energía en el flujo es igual a la energía crítica $(E_c)$, es decir:
+
+\begin{equation}
+    E_c=Ec \quad \rightarrow \quad y=y_c
+    \nonumber
+\end{equation}
+
+y la profundidad a la que se transporta un caudal determinado $Q$ es $y=y_c$.
+
+\section{Canal Rectangular}
+
+\subsection{Energía Específica}
+
+La energía específica en un canal de baja pendiente es:
+
+\begin{equation}
+    E=y+\alpha \dfrac{Q^{2}}{2gA^{2}}
+    \label{ecu:ener1}
+\end{equation}
+
+para un canal rectangular de ancho $b$ y teniendo que $\alpha=1$, reemplazando en la ecuación \ref{ecu:ener1} tenemos:
+
+\begin{equation}
+    E=y+\dfrac{Q^{2}}{2gb^{2}y^{2}}
+\end{equation}
+
+En términos del caudal unitario definido cómo $q=\dfrac{Q}{b}$, se tiene que:
+\begin{equation}
+    E=y+\dfrac{q^{2}}{2gy^{2}}
+\end{equation}
+
+Partiendo de los conceptos de cálculo diferencial se conoce que los puntos mínimos o máximos de una función se presentan cuando $\dfrac{dF}{dx}=0$ para una función $f(x)$, por esto si deseamos conocer el punto de inflexión se tiene que $\dfrac{dE}{dy}=0$:
+
+\begin{equation}
+    \begin{aligned}
+       \dfrac{dE}{dy}=1-\dfrac{2q^{2}}{2gy^{3}}&=0 \qquad y^{3}=\dfrac{q^{2}}{g} \\
+       y=&\left(\dfrac{q^{2}}{g}\right)^{\frac{1}{3}}=y_c
+    \end{aligned}
+    \label{ecu:ycubo}
+\end{equation}
+
+Esta profundad $y$ para la cual $E$ es mínima se denomina la \textbf{profundidad crítica} $y_c$. \vspace{1ex}
+
+A partir de $\dfrac{dE}{dy}$, no es posible determinar si la función tiene un mínimo o un máximo en $y_c$, derivando nuevamente se tiene:
+
+\begin{equation}
+    \dfrac{d^{2}E}{dy^{2}}=0+\dfrac{3q^{2}}{gy^{4}}=\dfrac{3q^{2}}{gy^{4}}
+\end{equation}
+
+Como $\dfrac{d^{2}E}{dy^{2}}$ es siempre positiva para cualquier valor de $y$ dado $q$, $E$ es mínima para $y_c$. \vspace{1ex}
+
+De la ecuación \ref{ecu:ycubo} se tiene que:
+
+\begin{equation}
+    y_{c}^{3}=\dfrac{q^{2}}{g}\rightarrow y_{c}=\dfrac{Q^{2}}{gb^{2}y_{c}^{2}} \rightarrow \dfrac{y_{c}}{2}=\dfrac{v_c^{2}}{2g}
+\end{equation}
+
+Entonces la profundidad crítica es 2 veces la cabeza de energía cinemática.
+
+Reemplazando en la ecuación de energía específica:
+
+\begin{equation}
+    E=y_{c}+\dfrac{y_{c}}{2}=\dfrac{3}{2}y_{c}\rightarrow y_{c}=\dfrac{2}{3}E
+\end{equation}
+
+Luego la profundidad crítica es $\frac{2}{3}$ de la energía específica, como:
+
+\begin{equation}
+    \dfrac{v_c^{2}}{2g}=\dfrac{y_{c}}{2}\rightarrow\dfrac{v_c^{2}}{gy_{c}}=1 \rightarrow Fr^{2}=1 \rightarrow Fr=1
+\end{equation}
+
+Note que el número de Froude es igual a 1 cuando el flujo es \textbf{crítico.}
+
+\subsection{Caudal unitario}
+
+Para determinar los cambios de $q$ con respecto a $y$ para un valor dado de $E$, se tiene:
+\begin{equation}
+    \begin{aligned}
+      E=q+\dfrac{q^{2}}{2gy^{2}}&\rightarrow2gy^{2}(E-y)=q^{2} \\
+      q^{2}&=2gq^{2}E-2gq^{3}
+    \end{aligned}
+    \label{ecu:q2menos}
+\end{equation}
+ 
+De la ecuación \ref{ecu:q2menos} tenemos que para $y=0\rightarrow q=0$ al igual que cuando $y=E$. Derivando la ecuación para determinar los valores de $y$ para que $q$ sea $q_{max}$ o $q_{min}$, se tiene:
+
+\begin{equation}
+    \begin{aligned}
+        \dfrac{d(q^{2})}{dy}&=\dfrac{d(2gEy^{2}-2gy^{3})}{dy} \\
+        2q \dfrac{dq}{dy}&=2gE2y-2g3y^{2}\\
+        q \dfrac{dq}{dy}&=2gEy-3gy^{2} \rightarrow q \dfrac{dq}{dy}=gy(2E-3y)
+    \end{aligned}
+    \label{ecu:largaq}
+\end{equation}
+
+Igualando la ecuación \ref{ecu:largaq} a 0, se tiene que: $gy(2E-3y)=0$
+
+\begin{equation} 
+    \left.\begin{aligned} y&=\dfrac{2}{3}E \\
+    y&=0\end{aligned} \right \} \quad \text{Raices} 
+\end{equation}
+
+Entonces se puede deducir que $y=\dfrac{2}{3}E\rightarrow y=y_{c}$ \vspace{2ex}
+
+Para determinar si se trata de un máximo o de un mínimo se tiene:
+
+\begin{equation}
+    \begin{aligned}
+        \left(\dfrac{dq}{dy}\right)&^{2}+q\dfrac{d^{2}q}{dy^{2}}=2gE-6gy \\
+        \text{Si} \quad \dfrac{dq}{dy}&=0 \quad \text{para} \quad y=\dfrac{2}{3}E \\
+        q\dfrac{d^{2}q}{dy^{2}}=&2gE-4Eg=-2Eg\\
+        \dfrac{d^{2}q}{dy^{2}}=\dfrac{-2Eg}{q}&\rightarrow\dfrac{d^{2}q}{dy^{2}} \quad \text{es siempre negativo}
+    \end{aligned}
+\end{equation}
+
+Esto quiere decir que $q$ es máximo cuando $y=y_{c}$. Sustituyendo en la ecuación para $q=f(y)$ 
+
+\begin{equation}
+    \begin{aligned}
+        q^{2}_{max}=2g\dfrac{4}{9}E^{3}-2g\dfrac{8}{27}E^{3}\\
+        q^{2}_{max}=2g\left(\dfrac{12E^{3}-8E^{3}}{27}\right)=\dfrac{8gE^{3}}{27}
+    \end{aligned}  
+\end{equation}
+
+La función $q=(2gEy^{2}-2gy^{3})=f(y)$ es una familia de curvas de la forma. \vspace{3ex}
+
+
+\textcolor{red}{\textbf{(PRIMERA GRÁFICA)}} \vspace{1ex}
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.6\linewidth]{}
+%     \caption{Familia de curvas}
+%     \label{fig:familiacurvas}
+% \end{figure} 
+
+\subsection{Fuerza específica}
+
+La fuerza específica es $Fr=\bar{z}A+\beta\dfrac{Q^{2}}{gA}$ sabiendo que para un canal rectangular el ancho es $b$ y $\beta=1$, se tiene:
+
+\begin{equation}
+    F_{s}=\dfrac{y^{2}b}{2}+\dfrac{Q^{2}}{gby} \rightarrow \dfrac{y^{2}b}{2}+\dfrac{bq^{2}}{gy}
+\end{equation}
+
+La fuerza específica por unidad de ancho
+
+\begin{equation}
+    \dfrac{F_{s}}{b}=\dfrac{y^{2}}{2}+\dfrac{q^{2}}{gy}
+\end{equation}
+
+Tenemos que $F_{s}=f(y)$ para determinar los puntes de inflexión, derivamos $\dfrac{dF_{s}}{dy}$, entonces:
+
+\begin{equation}
+    \begin{aligned}
+        \dfrac{dF_{s}}{dy}=&y-\dfrac{q^{2}}{gy^{2}}\\
+        \text{haciendo} \quad \dfrac{dF_{s}}{dy}=0 \qquad &y=\dfrac{y^{2}}{gy^{2}}\rightarrow y=\dfrac{v^{2}}{g}
+    \end{aligned}
+    \label{ecu:V}
+\end{equation}
+
+La ecuación \ref{ecu:V} es válida cuando el flujo es crítico. Para determinar si el punto es un máximo o un mínimo, se tiene qué: $\dfrac{d^{2}F_{s}}{dy^{2}}=1+\dfrac{2q^{2}}{gy^{3}}$ \vspace{1ex}
+
+El valor de $\dfrac{dF_{s}}{dy}=1+\dfrac{2q^{2}}{gy^{3}}$ es siempre positivo por lo que la fuerza específica es mínima a la profundidad crítica.
+
+\section{Canal no rectangulares (Prismáticos)}
+
+\subsection{Energía específica}
+
+Partiendo de la ecuación de energía específica:
+
+\begin{equation}
+    E=y+\alpha \dfrac{Q^{2}}{2gA^{2}}
+\end{equation}
+
+Derivando respecto a $y$ obtenemos:
+
+\begin{equation}
+    \dfrac{dE}{dy}=1-\dfrac{Q^{2}}{gA^{3}}\dfrac{dA}{dy}
+\end{equation}
+
+Luego para obtener el valor mínimo para $E$, se obtiene si $\dfrac{dE}{dy}=0$ para una sección prismática $\dfrac{dA}{dy}=B$, lo que se denomina ancho en la superficie.
+
+Entonces para un canal trapezoidal:
+
+\begin{equation}
+    \begin{aligned}  
+        A=(B_0+sy)y \qquad &\dfrac{dA}{dy}=B_0+2sy=B\\
+        \text{Entonces} \quad 1-\dfrac{Q^{2}}{gA^{3}}B=0& \qquad 1-\dfrac{v^{2}}{gD}=0 \qquad \dfrac{D}{2}=\dfrac{v^{2}}{2g}\\
+        \text{donde} \quad D\rightarrow \text{profundidad hidráulica}& \qquad D=\dfrac{A}{B}\\
+        \text{Obteniendo} \quad \dfrac{d^{2}E}{dy^{2}}=0-\dfrac{d}{dy}\left(\dfrac{Q^{2}}{gA^{3}}\cdot B\right)=&\dfrac{-Q^{2}}{g}\left(\dfrac{-3B}{A^{4}}\dfrac{dA}{dy}+\dfrac{1}{A^{3}}\dfrac{dB}{dy}\right)\\
+        \dfrac{d^{2}E}{dy^{2}}=\dfrac{Q^{2}}{g}\left(\dfrac{3B^{2}}{A^{4}}-\dfrac{1}{A^{3}}\dfrac{dB}{dy}\right)=&\dfrac{Q^{2}}{gA^{3}}\left(\dfrac{3B^{2}}{A}-\dfrac{dB}{dy}\right)
+    \end{aligned}
+\end{equation}
+
+Esta siempre es positiva ya que $\dfrac{3b^{2}}{A}>\dfrac{dB}{dy}$ por lo tanto $E$ es mínima cuando $\dfrac{dE}{dy}=0$. Esta profundidad que se obtiene a partir de $\dfrac{D}{2}=\dfrac{v^{2}}{2g}\rightarrow$ es la profundiad crítica. \vspace{1ex}
+
+Note que la profundidad hidráulica es dos veces al energía cinemática cuando el flujo es crítico (similar para el caso de un canal rectangular).
+
+Analizando el número de Froude, para flujo crítico:
+
+\begin{equation}
+    \begin{aligned}
+        Fr=1=\dfrac{v}{\sqrt{gD}} \rightarrow& \text{la cual se puede derivar de la ecuación para la energía mínima}\\ 
+        &\dfrac{D}{2}=\dfrac{v^{2}}{2g} \rightarrow 1 = \dfrac{v}{\sqrt{gD}}=Fr
+    \end{aligned} 
+\end{equation}
+
+para el caso de un canal de alta pendiente, con distribución de velocidad no uniforme en donde:
+
+\begin{equation}
+    E=dcos\theta+\alpha	\dfrac{Q^{2}}{2gA^{2}}
+\end{equation}
+
+Se puede obtener que
+
+\begin{equation}
+    Fr=1=\dfrac{v}{\sqrt{gd\dfrac{cos\theta}{\alpha}}} \quad \text{Donde} \quad \theta \quad \text{es el ángulo de inclinación del canal}
+\end{equation}
+
+
+\subsection{Fuerza específica}
+
+Partiendo de la ecuación $Fr=\dfrac{Q^{2}}{gA}+\bar{z}A$ y derivando la ecuación respecto a $y$, se obtiene:
+
+\begin{equation}
+    \dfrac{dF_{s}}{dy}=-\dfrac{Q^{2}}{gA^{2}}\dfrac{dA}{dy}+\dfrac{d(\bar{z}A)}{dy}
+\end{equation}
+
+\textcolor{red}{\textbf{(SEGUNDA GRÁFICA)}} \vspace{1ex}
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.6\linewidth]{}
+%     \caption{Repre. momento}
+%     \label{fig:familiacurvas}
+% \end{figure} 
+
+Donde $\bar{z}A$ representa el momento de $A$ respecto a la superficie de agua
+
+El cambio en el  momento del área $(\Delta(\bar{z}A))$ debido a pequeños cambios en la profundidad del agua $\Delta y$ con respecto a la superficie del agua:
+
+\begin{equation}
+    \begin{aligned}
+        \Delta(\bar{z}A)=A(\bar{z}+\Delta y)&-A\bar{z}+B\Delta y \cdot \dfrac{\Delta y}{2}\\ 
+        \Delta(\bar{z}A)&=A \Delta y\\
+        d(\bar{z}A)&=Ady\\
+        \text{Reemplazando}& \qquad \dfrac{dF_{s}}{dy}=-\dfrac{Q^{2}}{gA^{2}}B+A\\
+        \text{para} \quad \dfrac{dF_{s}}{dy}=0 \quad \dfrac{v^{2}}{g}=D \rightarrow \dfrac{v^{2}}{2g}=\dfrac{D}{2} &\rightarrow \text{Esta condición se satisface cuando el flujo es crítico}
+    \end{aligned} 
+\end{equation}
+
+Como la última condición se satisface, por lo tanto $F_{s}$ es mínima cuando el flujo es crítico $(y=y_c)$ para probar que esto es un mínimo, $\dfrac{d^{2}F_{s}}{dy^{2}}=\dfrac{dA}{dy}+\dfrac{Q^{2}}{gA^{3}}\left(\dfrac{3B^{2}}{A}-\dfrac{dB}{dy}\right)$, luego como $\dfrac{3b^{2}}{A}>\dfrac{dB}{dy}$ el segundo término es siempre positivo al igual que $\dfrac{dA}{dy}=B$, por lo tanto $\dfrac{d^{2}F_{s}}{dy^{2}}\rightarrow$ es positiva, por lo que $F_s$ es un mínimo cuando $\dfrac{dF_{s}}{dy}=0$
+
+\subsection{Aplicaciones del flujo crítico}
+
+El flujo crítico establece una relación única entre el caudal y la profundidad del flujo. Teniendo en cuenta esto, \textcolor{blue}{muchas medidas de caudal} han sido desarrolladas. Por otro lado, recordemos que el flujo crítico garantiza \textcolor{blue}{el máximo caudal} a través de una sección. El flujo crítico se puede lograr:
+
+\begin{itemize}
+    \item Reduciendo la sección del flujo (ancho).
+    \item Elevando el fondo del canal.
+    \item Combinando las dos.
+\end{itemize}
+
+\subsubsection{Canal horizontal con ancho constante y elevación de fondo}
+
+\textcolor{red}{\textbf{(TERCERA GRÁFICA)}} \vspace{1ex}
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.6\linewidth]{}
+%     \caption{Canal horizontal con ancho constante y elevación de fondo}
+%     \label{fig:familiacurvas}
+% \end{figure} 
+
+Donde $\Delta z_{max}$ garantiza la ocurrencia de la profundidad crítica para una energía dada en 1, $\Delta z_{max}=E_{1}-E_{2}$ para un $\Delta z>\Delta z_{max}$ la profundidad en 1 debe aumentar y por lo tanto $E_{1}$ aumenta para garantizar que $\Delta z=E_{1}-E_{2}$
+
+\subsubsection{Canal horizontal con ancho variable}
+
+\textcolor{red}{\textbf{(CUARTA GRÁFICA)}} \vspace{1ex}
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.6\linewidth]{}
+%     \caption{Canal horizontal con ancho variable}
+%     \label{fig:familiacurvas}
+% \end{figure} 
+
+En la medida que el ancho \textcolor{blue}{decrece}, la profundidad de agua \textcolor{blue}{decrece para}  flujo subcrítico aguas arriba. La profundidad de agua aumenta para una reducción del ancho para flujo supercrítico. \vspace{1ex}
+
+Hay un limite del ancho en la reducción para una energía dada en 1 $(B_c)$, para un $B<B_{c}$ a veces aumenta \textcolor{blue}{el agua} en 1 y cambia la energía en $E_{1}$ para que $B=B_{c}$.
+
+
+\begin{ejemplo}{1}
+
+    Un puente será construido sobre un canal de $50m$ de ancho que transporta un caudal de $200m^{3}/s$ con una profundidad de $4.0m$. Con el fin de reducir el \textcolor{blue}{largo} del puente, cual es el ancho mínimo del canal que garantiza que la \textcolor{blue}{condición} aguas arriba del puente no cambiará. \vspace{2ex}
+
+    \begin{solution} \vspace{1.5ex}
+
+    Se tiene que: $Q=200m^{3}/s$, $b=50m$, $y_1=4.0m$
+
+    \begin{equation}
+        \begin{aligned}
+            v=\dfrac{200 m^3/s}{50m \cdot 4m}=1m/s \qquad &E=4+\dfrac{1}{2\cdot9.81}=4,05m\\
+            y_{c}=\dfrac{2}{3}E=\dfrac{2}{3}&(4.05)=2.7m\\
+            q=\sqrt{gy^{3}_{c}}=\sqrt{9.81\cdot(2.7)^{3}}&=13.9 \dfrac{m^{3}/s}{m}\\
+            q=\dfrac{Q}{B_c}=\dfrac{200}{13.9}=14.4m \rightarrow \quad &\text{Ancho mínimo que garantiza que la condición a.arriba no cambie}    
+        \end{aligned} 
+    \nonumber
+    \end{equation}
+    
+    \end{solution}
+
+\end{ejemplo}
+
+\begin{ejemplo}{2}
+
+    Para un canal rectangular \vspace{2ex}
+
+    \begin{solution} \vspace{1.5ex}
+
+    Se tiene que: $Q=250m^{3}/s$, $b=50m$, $y_1=5.0m$ \vspace{2ex}
+
+    Para producir flujo crítico en este canal, determine:
+
+    \begin{enumerate}
+        \item El escalón en el fondo del canal para un ancho constante.
+        \item La reducción en el ancho del canal.
+        \item La combinación de escalon y ancho del canal.
+    \end{enumerate}
+
+    \begin{equation}
+        \begin{aligned}
+            v=\dfrac{Q}{A}=\dfrac{250 m^3/s}{50m \cdot 5m}=1m/s \qquad &E=y+\dfrac{v^{2}}{2g}=5+\dfrac{1}{2\cdot9.81}=5,05m\\
+            y_{c}=\dfrac{2}{3}E=\dfrac{2}{3}&(5.05)=3.37m
+        \end{aligned} 
+    \nonumber
+    \end{equation}
+
+    a)  $$\Delta z_{max}=E_{1}-E_{2}=y_{1}-y_{c}=5-3.37=1.63m$$
+    b)  $$q=\sqrt{gy^{3}_{c}}=\sqrt{9.81\cdot(3.37)^{3}}=19.38\dfrac{m^{3}/s}{m}$$
+    $$q=\dfrac{Q}{B_{c}}=B_{c}=\dfrac{Q}{q}=\dfrac{250}{19.38}=12.9m$$
+    c) \begin{center}
+            Supongamos que $B_{c}=\dfrac{b}{2}=25m$, $B_{c}>12.9m$
+        \end{center}
+        $$q=\dfrac{Q}{B_{c}}=\dfrac{250}{25}=10\dfrac{m^{3}/s}{m} \qquad y_{c}=\sqrt[3]{\dfrac{q^{2}}{g}}$$
+        $$y_{c}=\sqrt[3]{\dfrac{10^{2}}{9.81}}=2.17m$$
+        $$E_{c}=2.17+\dfrac{10^{2}}{2\cdot9.81\cdot(2.17)^2}=3.25m$$
+        $$\Delta z= 5.05-3.25=1.8m$$
+    
+    
+    \end{solution}
+
+\end{ejemplo}
+
+\subsection{Localización del flujo crítico}
+
+\subsubsection{Canal horizontal rectangular con aumento en el fondo}
+
+$$\dfrac{dz}{dx}=(F^{2}_{r}-1)\dfrac{dy}{dx} \quad \text{para el flujo crítico} \quad F^{2}_{r}=1\rightarrow\dfrac{dz}{dx}=0$$
+$$\dfrac{dz}{dx}=0 \quad \text{\textcolor{blue}{también} cuando} \quad\dfrac{dy}{dx}=0 \quad \text{por lo tanto} \quad \dfrac{dz}{dx}=0 \quad \text{en el punto más alto}$$
+$$\dfrac{d^{2}z}{dx^{2}}=(F^{2}_{r}-1)\dfrac{d^{2}y}{dx^{2}}+2F_{r}\dfrac{dy}{dx}\dfrac{F_{r}}{dx}$$
+$$\text{para el flujo crítico} \quad F_{r}=1\rightarrow\dfrac{d^{2}z}{dx^{2}}=2\dfrac{dy}{dx}\dfrac{dF_{r}}{dx}$$
+$$y_{2}=y_{c}<y_{1}\rightarrow \dfrac{dy}{dx} (-)$$
+$$F_{r_{2}}=F_{c}>F_{r}\rightarrow \dfrac{dF_{r}}{dx} (+)$$
+$$\dfrac{d^{2}z}{dx^{2}}(-) \rightarrow \text{Se trata entonces de un máximo.} \quad y_c \quad\text{ocurre en el punto máximo} $$
+
+\subsubsection{Canal horizontal con cambio en el ancho}
+$$H=z+y+\dfrac{Q^{2}}{2gA^{2}}$$
+$$\cancelto{0}{\dfrac{dH}{dx}}=\cancelto{0}{\dfrac{dz}{dx}}+\dfrac{dy}{dx}+\dfrac{d}{dx}\left(\dfrac{Q^{2}}{2gA^{2}}\right)=0 \qquad \dfrac{dy}{dx}+\dfrac{Q^{2}}{2g}\dfrac{d}{dx}\left(\dfrac{1}{b^{2}y^{2}}\right)=0$$
+$$\dfrac{dy}{dx}+\dfrac{Q^{2}}{2g}\dfrac{(-2)}{b^{3}y^{2}}\dfrac{db}{dx}+\dfrac{Q^{2}}{2g}\dfrac{(-2)}{b^{2}y^{3}}\dfrac{dy}{dx}=0$$
+$$\dfrac{dy}{dx}-\dfrac{Q^{2}}{y}\left(\dfrac{1}{b^{3}y^{2}}\dfrac{db}{dx}+\dfrac{1}{b^{2}y^{3}}\dfrac{dy}{dx}\right)=0$$
+$$\dfrac{dy}{dx}=\dfrac{Q^{2}}{gy^{3}b^{2}}\left(\dfrac{y}{b}\dfrac{db}{dx}+\dfrac{dy}{dx}\right)=0 \qquad \dfrac{dy}{dx}-F^{2}_{r}\left(\dfrac{y}{b}\dfrac{db}{dx}+\dfrac{dy}{dx}\right)$$
+$$\dfrac{dy}{dx}(1-F^{2}_{r})-F^{2}_{r}\dfrac{y}{b}\dfrac{db}{dx}=0 \qquad  \rightarrow para \qquad F_{r}=F_{r_{c}}=1\rightarrow\dfrac{db}{dx}=0$$
+
+\subsection{Cálculo de la profundidad crítica}
+
+\subsubsection{Canal con una única sección}
+
+Partiendo de la ecuación general para un canal con pendiente $\theta$ y con velocidad no uniforme, se tiene:
+
+\begin{equation}
+    F_{r}=\dfrac{v}{\sqrt{gD\dfrac{cos\theta}{\alpha}}}=1
+\end{equation}
+
+Como  $Q=vA\rightarrow v=\dfrac{Q}{A}$, reemplazando, se tiene que:
+
+\begin{equation}
+    \dfrac{Q}{A\sqrt{gD\dfrac{cos\theta}{\alpha}}}=1
+\end{equation}
+
+Donde $D=\dfrac{A}{B}\rightarrow \text{profundidad hidráulica}$
+$$B=\dfrac{dA}{dy}\rightarrow \text{Ancho del canal en la superficie}$$
+$$\text{Haciendo} \quad A\sqrt{D}=\dfrac{Q}{\sqrt{gD\dfrac{cos\theta}{\alpha}}}$$
+
+La profundidad crítica $y_c$ se encuentra resolviendo la ecuación anterior. Note que $A\sqrt{D}=f(y_c \quad \text{\textcolor{blue}{y ??}})$ y $\dfrac{Q}{\sqrt{gD\dfrac{cos\theta}{\alpha}}}=cte$ para \textcolor{blue}{and?} de sección única, para un caudal dado, se tiene un solo valor de $y_{c}$ \textcolor{blue}{de pa de ven?} esta ecuación. Esta ecuación \textcolor{blue}{se puede reducir} mediante:
+
+\subsubsection{Curva de diseño}
+
+$$z_{c}=A\sqrt{D}=\text{factor de sección para $y_c$}$$ 
+$$\textcolor{blue}{v_{s}}$$
+$$\textcolor{blue}{y_{c}}$$
+
+Comun para \textcolor{blue}{canales} trapezoidales y circulares
+
+\section{Métodos numéricos}
+
+Los principales métodos utilizados para encontrar las raices de una función implícita $f(y)=0$ son:
+
+\begin{enumerate}
+    \item Método de la sección.
+    \item Método de la bisección.
+    \item Método de Newton-Raphson. \textit{(mejor)}
+\end{enumerate}
+
+$$A\sqrt{D}-\dfrac{Q}{\sqrt{g\dfrac{cos\theta}{\alpha}}}=0=f(y)$$
+$$A^{\frac{3}{2}}B^{\frac{-1}{2}}-\dfrac{Q}{\sqrt{g\dfrac{cos\theta}{\alpha}}}=0$$
+
+El método de Newton-Raphson requiere el cálculo de $\dfrac{df}{dy}$, se tiene entonces que:
+
+
+$$\dfrac{df}{dy_{c}}=\dfrac{3}{2}A^{\frac{1}{2}}B^{\frac{-1}{2}}\dfrac{dA}{dy}-\dfrac{1}{2}B^{\frac{-3}{2}}\dfrac{dB}{dy}A^{\frac{3}{2}}\dfrac{dB}{dy}=f(f_{c})$$
+
+
+En ese orden de ideas para el cálculo de $\dfrac{dB}{dy}$:
+
+
+\begin{itemize}
+    \item Canal \textcolor{blue}{????}:
+
+    $$\dfrac{dB}{dy_{c}}\approx\dfrac{B(y_{c}+h)-B(y_c-h)}{2h}$$
+
+    Donde: $h\rightarrow$ \textcolor{blue}{???} pequeño en $y=10^{-6}$
+
+    \textcolor{red}{\textbf{(QUINTA GRÁFICA)}} \vspace{1ex}
+
+    \item Para canal prismático y \textcolor{blue}{????} $B=f(y_{c})$
+
+    $$\dfrac{dB}{dy_{c}}=2s \qquad \text{(Para canal trapezoidal $B=B_{0}+2sy_{c}$)}$$
+
+\end{itemize}
+
+El método de Newton Rhapson consiste \textcolor{blue}{????} en:
+
+$$y^{t+1}_{c}=y^{t}_{c}-\dfrac{f(y_c)}{f'(y_c)}$$
+
+El proceso iterativo para cuando $|y^{t+1}-y^{t+}|\leq tolerancia$.
+
+El valor inicial para se puede obtener suponiendo que el canal es rectangular, por lo que:
+
+$$A\sqrt{D}=\dfrac{Q}{\sqrt{g\dfrac{cos\theta}{\alpha}}}\rightarrow by^{\frac{3}{2}}=\dfrac{Q}{\sqrt{g\dfrac{cos\theta}{\alpha}}}$$
+$$y_{c}=\left(\dfrac{Q}{b\sqrt{g\dfrac{cos\theta}{\alpha}}}\right)^{\frac{2}{3}}$$
+
+\begin{ejemplo}{1}
+
+Canal trapezoidal
+
+$Q=30m^{3}/s$, $B_{0}=10m$, $s=2, \theta \approx0, \alpha=1$
+
+Calculo la profundidad crítica:
+
+\begin{solution}
+    Sabiendo que para un canal trapezoidal se tiene que, $B=B_{0}+2sy$
+
+    $$z_{c}=A\sqrt{D}=\dfrac{Q}{\sqrt{g}}$$
+    $$\dfrac{Q}{\sqrt{g}}=\dfrac{30}{\sqrt{9.81}}=9.58$$
+    $$A=\dfrac{1}{2}(B_{0}+2sy_{c}+B_{0})y_{c}=(B_{0}+sy_{c})y_{c}=(10+2y_{c})y_{c}$$
+    $$B=\dfrac{dA}{dy}=B_{0}+2sy_{c}=10+4y_{c}$$
+    $$D=\dfrac{A}{B}=\dfrac{(10+2y_{c})y_{c}}{10+4y_{c}}$$
+    $$(10+2y_{c})y_{c}\sqrt{\dfrac{(10+2y_{c})y_{c}}{10+4y_{c}}}-9.58=0=f(y_c)$$
+
+    Utilizando un solver para la ecuación anterior $(f(y_c))$ o utilizando el método de Newton Raphson, se tiene que $y_c=0.91m$, si se usa el método de Newton Raphson. $y_c$ para $t=0$
+
+    $$y^{t=0}_{c}=\left(\dfrac{30}{10\sqrt{9.81}}\right)^\frac{2}{3}=0.17m$$
+    
+\end{solution}
+    
+\end{ejemplo}
+
+\subsection{Método de la Bisección}
+
+    \begin{enumerate}
+        \item Elegir un intervalo de $y_{c}$, $a<y_{c}<b$ tal que $f(a)f(b)<0$ (Signo opuesto).
+        \item Calcular el punto medio del intervalo $c=\dfrac{a+b}{2}$
+        \item Evaluar $f$ en $c$, si $f(c)$
+
+        Si $f(c)\approx0$ $y_c=c$
+        Si $f(a)f(c)<0\rightarrow a<y_c<b \rightarrow b=c$
+        Si $f(c)f(b)<0\rightarrow c<y_c<b \rightarrow a=c$
+
+        \textcolor{red}{\textbf{(SEXTA GRÁFICA)}} \vspace{1ex}
+
+        \item El \textcolor{blue}{???} de \textcolor{blue}{????} cuando $f(c)\leq 10^{-6}$ (tolerancia).
+    \end{enumerate}
+
+
+\begin{ejemplo}{2}
+    Canal circular
+
+    $Ø=8ft, m=1ft/milla, Q=100 cfs \quad (\text{cubic feet per second}), \alpha=1$
+
+    \begin{solution}
+    
+    Primeramente, se tiene la conversión:
+
+    $$m=1\dfrac{ft}{milla}\cdot\dfrac{1milla}{5280ft}=0.0002$$
+
+    Calculando el valor de $y_c$, se tiene:
+
+    $$\theta=arctan(0.0002)=0.011  \qquad \theta \approx 1$$
+    $$A\sqrt{D}=\dfrac{Q}{\sqrt{g}}\rightarrow A\sqrt{D}-\dfrac{Q}{\sqrt{g}}=0=f(y_c)$$
+    $$\dfrac{Q}{\sqrt{g}}=\dfrac{100}{\sqrt{32.2}}=17.62$$
+    $$A=\dfrac{1}{8}(\theta-sin\theta)Ø^{2}$$
+    $$B=Øsin\dfrac{1}{2}\theta$$
+    $$A^{3/2}B^{-1/2}-17.62=0$$
+    $$\left(\dfrac{1}{8}(\theta-sin\theta)Ø^{2})\right)^{3/2}\left(Øsin\dfrac{1}{2}\theta\right)^{-1/2}-17.62=0$$
+    $$y_c=\dfrac{Ø}{2}(1-cos\theta/2)=$$
+    \end{solution}
+
+    
+\end{ejemplo}
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+ 
