@@ -60,7 +60,7 @@ Para el an\'alisis de las leyes de conservaci\'on de la masa, de la energi\'ia y
     \centering
     \includegraphics[width=0.8\linewidth]{fig71.png}
     \caption{Cambio abrupto en el fondo del canal.}
-    \label{fig72}
+    \label{fig71}
 \end{figure}
 
 \subsection{Conservaci\'on de la masa}
@@ -95,7 +95,7 @@ Considerando una velocidad uniforme en la secci\'on, el flujo de cantidad de mov
     m = \rho Q \left( \beta V \right)
 \label{eq4}
 \end{equation}
-en donde $\beta$ es un coeficiente de cantidad de movimiento el cual corrige $m$ teniendo en cuenta la distribuci\'on no uniforme de la velocidad en la secci\'on. Analisando la figura~\ref{71}, la ecuaci\'on~\ref{eq4} puede ser utilizada para estimar $m$ en las secciones 1 y 3 pero no en la secci\'on 1. 
+en donde $\beta$ es un coeficiente de cantidad de movimiento el cual corrige $m$ teniendo en cuenta la distribuci\'on no uniforme de la velocidad en la secci\'on. Analisando la figura~\ref{fig71}, la ecuaci\'on~\ref{eq4} puede ser utilizada para estimar $m$ en las secciones 1 y 3 pero no en la secci\'on 1. 
 
 La fuerza actuante sobre una secci\'on puede ser obtenida a partir de la ecuaci\'on~\ref{eq4} siempre y cuando la presi\'on en la secci\'on sea hidroest\'atica como es el caso de las secciones 1 y 3. Para el caso de la secci\'on 2 en donde no es posible determinar la fuerza  a menos que la funci\'on de distribuci\'on de presiones sea conocida, lo cual puede lograrse a trav\'es de mediciones en el labotorio.  Esto hace que la aplicaci\'on de la cantidad de movimiento en FRV sea complicada. 
 
@@ -247,7 +247,7 @@ En el caso de un flujo supercr\'itico que pasa a trav\'es de una contracci\'on g
     \centering
     \includegraphics[width=0.8\linewidth]{fig76.jpeg}
     \caption{Resalto hidr\'aulico oblicuo.}
-    \label{fig75}
+    \label{fig76}
 \end{figure}
 
 Analizando la figura~\ref{fig76}, las velocidades tangenciales antes y despues de la contracci\'on (frente de onda) deben ser iguales:
@@ -313,6 +313,204 @@ Integrando la ecuaci\'on~\ref{eq14} y sustituyendo $E$ en terminos de $y$ y de $
 \end{equation}
 donde $\theta_0$ es la constante de integraci\'on la cual se obtiene sustituyendo $\theta = 0$ para la profundidad $y = y_1$. Esta ecuaci\'on estima los cambios en las profundidades en la transici\'on debido a cambios de $\theta$. 
 
+\section{Vertederos}
+Los \emph{vertederos} son estructuras hidraulicas usadas en el laboratorio para medir el caudal en canales artificiales o naturales. Existen dos tipos de vertederos: 1) \emph{vertederos de cresta delgada} y 2) \emph{vertederos de cresta ancha}. 
+
+\subsection{Vertedero de cresta delgada}
+Esta compuesto por una lamina delgada que es empotrada perpendicular a la direcci\'on del flujo en las paredes y al fondo del canal. La parte superior de la placa tiene una abertura, usualmente, rectangular, triangular o trapezoidal cuyo bordes son afilados para garantizar un paso del agua sin perturbaciones a trav\'es de la abertura. En el caso de vertederos triangulares, estos son usados para caudales pequeños. El analisis teorico del flujo sobre un vertedero considera que el flujo esta en contacto con la presi\'on atmosferica arriba y abajo del chorro que atraviesa el vertedero.  
+
+Consideremos el flujo sobre un vertedero rectangular como el mostrado en la figura~\ref{fig77}. 
+% Chau fig 7-7
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{fig77.jpeg}
+    \caption{Vertedero rectangular de cresta delgada.}
+    \label{fig77}
+\end{figure}
+
+
+
+Si se asume que cualquier punto en la \emph{lamina de agua} (nappe en Ingles), la cual es la porci\'on del flujo que fluye por encima del vertedero, la presi\'on es igual a la presi\'on almosferica, la energia en el punto $a$ de la figura es $h = \frac{P_{atm}}{\gamma} + \alpha \frac{V^2}{2g} \approx \alpha \frac{V^2}{2g}$, donde $h$ es la energ\'ia en el punto $a$. Despejando la velocidad, se tiene que $V = \sqrt{2 \alpha g h }$. En analisis experimentales, se ha encontrado que $\alpha \approx 1$ en vertederos. El caudal por unidad de ancho $q$ se puede calcular como:
+\begin{equation}
+    %q = \int_{h_o}^{H_o + h_o} \sqrt{2gh} dh = \frac{2}{3}\sqrt{2g}\left[ \left(H_o + h_o \right)^{3/2} - \left( h_o \right)^{3/2} \right]
+    q = \int_{0}^{H_o} \sqrt{2gh} dh = \frac{2}{3}\sqrt{2g}\left(H_o \right)^{3/2}
+    \label{eq16}
+\end{equation}
+Teniendo en cuenta contracciones del flujo y otros efectos, se introduce el coeficiente de correcci\'on de caudal $C_d$, por lo que la ecuaci\'on~\ref{eq16} queda:
+\begin{equation}
+    q = \frac{2}{3}C_d\sqrt{2g}\left(H_o \right)^{3/2}
+    \label{eq17}
+\end{equation}
+Para un verderdo cuyo ancho de cresta es $B$, el caudal queda expresado como:
+\begin{equation}
+    Q = \frac{2}{3}C_d B\sqrt{2g}\left(H_o \right)^{3/2}
+    \label{eq17a}
+\end{equation}
+Para vertederos rectangulares con contracciones, $Q$ se expresa como:
+\begin{equation}
+    Q = \frac{2}{3}C_d B' \sqrt{2g}\left(H_o \right)^{3/2}
+    \label{eq17b}
+\end{equation}
+donde $B' = B - a$ y $a$ es el ancho ocupado por las contracciones. 
+
+Con base en resultados experimentales:
+\begin{equation}
+    C_d = 0.611 + 0.08\frac{H_o}{P}
+    \label{eq18}
+\end{equation}
+donde $P$ es la distance vertical a la cresta del vertedero desde el fondo del canal. Esta formula es valida para $H_o / P < 5$. Para $H_o / P > 15$ la cresta del vertedero queda sumergida y el vertedero deja de controlar el flujo de manera efectiva y el caudales se puede calcular a partir de la relaci\'on de flujo cr\'itico por lo que se asume que $y_c = H_o$.
+
+Para vertederos triangulares conocidos como vertederos \emph{v-notch}, se tiene que:
+\begin{equation}
+    Q = \int_A \sqrt{2gh} dA = \sqrt{2g} \int_A \sqrt{h} dh dx = \sqrt{2g} \int_0^{H_o} \sqrt{h} dh \left(H_o-h\right) \tan \left(\frac{\alpha}{2}\right) = \frac{8}{15} \tan\left(\frac{\alpha}{2}\right) \sqrt{2g} H_o^{5/2}
+    \label{eq19}
+\end{equation}
+donde $\alpha$ es el angulo del vertedero triangular. Teniendo en cuenta las contracciones, el caudal se puede corregir y expresar como:
+\begin{equation}
+    Q =  \frac{8}{15} C_d \tan\left(\frac{\alpha}{2}\right) \sqrt{2g} H_o^{5/2}
+    \label{eq20}
+\end{equation} 
+Para $\alpha = 90^o$, se ha encontrado que $C_d \approx 0.585$, por lo que reemplanzado estos valores en la ecuaci\'on anterior se tiene:
+\begin{equation}
+    Q =  1.4 H_o^{5/2}
+    \label{eq20a}
+\end{equation} 
+
+Para vertederos trapezoidales, sumando   las ecuaciones ~\ref{eq17b} y ~\ref{eq20}, se tiene:
+\begin{equation}
+    Q =  \frac{2}{3}C_d B' \sqrt{2g}\left(H_o \right)^{3/2} + \frac{8}{15} C_d \tan\left(\frac{\alpha}{2}\right) \sqrt{2g} H_o^{5/2}
+    \label{eq21}
+\end{equation}
+
+\section{Vertederos de cresta ancha}
+Los vertederos de cresta ancho son estructuras en donde el fondo del canal se eleva brusca o gradualmente por una longitud finita. Esta elevaci\'on del fondo al prolongarse por cierto distancia da origen a un flujo paralelo al vertedero en donde suele presentarse la profundidad cr\'itica $y_c$. De acuerdo con esto, estos vertederos tambien pueden ser usados para determinar el caudal, en este caso, en funcion de $y_c$.
+
+Analisando el vertedero en un canal rectangular de la figura~\ref{fig78} en donde ocurre la profundidad cr\'itica en la cresta y, teniendo en cuenta que las p\'erdidas de energ\'ia son despreciales entre una secci\'on antes del vertedero y la secci\'on donde ocurre $y_c$, el balance de energ\'ia entre las secciones es:
+% Chau fig 7-8
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{fig78.jpeg}
+    \caption{Vertedero de cresta ancha.}
+    \label{fig78}
+\end{figure}
+
+\begin{equation}
+    H + \frac{V^2}{2g} = E_c = \frac{3}{2}y_c
+    \label{eq22}
+\end{equation}
+donde $H$ es la profundidad aguas arriba del vertedero.
+
+Si se asume que la velocidad de aproximaci\'on $V$ es despreciable en la ecuaci\'on anterior, se tiene que $y_c = \frac{2}{3}H$. Teniendo en cuenta que $q = \sqrt{g y_c^3}$, se tiene que el caudal por unidad de ancho $q$ es:
+
+\begin{equation}
+    q = \frac{2}{3}H \sqrt{\frac{2}{3} g H}
+    \label{eq23}
+\end{equation}
+Para un canal de ancho $B$ y teniendo en cuenta otras consideraciones, el caudal se calcula como:
+\begin{equation}
+    Q = C B \sqrt{g} H^{3/2}
+    \label{eq24}
+\end{equation}
+donde $C$ es un coeficiente de correcci\'on del $Q$. 
+
+Si $W$ es la altura del vertedero, $V = \frac{Q}{\left[B\left(H+W\right)\right]}$. Utilizando las ecuaciones ~\ref{eq22} y ~\ref{eq24}, se tiene:
+\begin{equation}
+    \frac{H}{H+W} = \frac{\left[3 C^{2/3}-2 \right]^{1/2}}{C}
+    \label{eq25}
+\end{equation}
+
+Analizando la longitud del vertedero $L$, el vertedero se considere largo si $L/H >3$. Si esta condici\'on se cumple es necesario reducir $H$ en una cantidad $\delta^*$ con el fin de tener en cuenta los efectos viscosos.
+
+En vertederos de cresta ancha, la sumergencia aguas abajo del vertedero puede afectar la estimaci\'on del caudal, esto sucede cuando el nivel aguas abajo del vertedero es mayor que $0.8H$. 
+
+\section{Aliviaderos}
+Los aliviaderos son estructuras hidr\'aulicas usadas para descargar caudales de excesos en sistemas de control de inundaciones y regulaci\'on de caudales, o para descargas controladas en irrigaci\'on y navegaci\'on. Los aliviaderos se pueden clasificar con base en los siguientes criterios: funcionalidad, estructura o tipo de entrada. De acuerdo a la funci\'on que cumplan, estos pueden ser estrucutas de: servicio, auxiliare o de emergencia. Con base en su estructura, esto pueden ser aliviaderos de: excesos, sistema de conduccion, o tunneles. De acuerdo con el tipo de entrada, estos pueden ser: orificios, sifones, canales laterales y morning glory. 
+
+\subsection{Aliviadero de excesos}
+Los aliviaderos de excesos se construyen sobre el cuerpo de presas por gravedad, de arco y de contrafuerte, en donde parte del cuerpo de la presa es usado para el aliviadero. Estas estructuras estan compuestas por: la cresta, el canal y el disipador de energ\'ia. 
+
+\subsubsection{cresta de un aliviadero de excesos}
+Para el diseño de la cresta, se deben tener en cuenta las siguientes consideraciones:
+\begin{itemize}
+    \item La presi\'on sobre la cresta es atmosf\'erica si la forma de la cresta es igual a la forma de la parte de abajo del chorro.
+    \item Puede occurrit que la presi\'on pueden ser mayor o menor que la presi\'on atmosf\'erica dependiendo de la forma de la cresta del aliviadero (ver figura~\ref{fig717}).
+% Chau fig 7-17
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{fig717.jpeg}
+    \caption{Presi\'on sobre un aliviadero de excesos.}
+    \label{fig717}
+\end{figure}
+
+\item La forma de la cresta se basa en la  \emph{cabeza de diseño}, $H_d$, la cual es seleccionada para un sitio espec\'ifico y debe ser tal que prevenga la presi\'on m\'inima igual a -6 m con el fin de evitar cavitaci\'on. La figura~\ref{fig718} se usa para seleccionar $H_d$ de tal manera que la condici\'on de m\'inima presi\'on se satisfaga. En esta figura, $H$ es la carga m\'axima sobre sobre la cresta del aliviadero. Usualmente, $H_d$ es selecionada de la  figura~\ref{fig718} y de tal manera que  $1.3< H/H_d < 1.5$. Esto garantiza una \'optima capacidad de descarga del aliviadero y la no ocurrencia de cavitaci\'on. 
+% Chau fig 7-18
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{fig718.jpeg}
+    \caption{Cabeza de diseño para aliviaderos de excesos.}
+    \label{fig718}
+\end{figure}
+
+\item La forma de la cresta puede ser determinada usando las relaciones de la figura~\ref{fig719}, las cuales fueron desarrolladas por el U.S Army Corps of Engineers basado en extensos an\'alisis de laboratorio. 
+% Chau fig 7-19
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{fig719.jpeg}
+    \caption{Forma de la cresta de un aliviadero de excesos.}
+    \label{fig719}
+\end{figure}
+\end{itemize}
+
+\subsubsection{Curva de calibraci\'on}
+La curva de calibraci\'on en un aliviadero de excesos es la relaci\'on matem\'atica entre el nivel del embalse aguas arriba del aliviadero y el caudal que descarga el aliviadero. Esta curva, se puede escribir como:
+\begin{equation}
+    Q = C L_e \sqrt{2g} H_e^{1.5}
+    \label{eq26}
+\end{equation}
+donde $L_e$ es la longitud efectiva del aliviadero, $C$ coeficiente de descarga y $H_e$ es la cabeza total de energ\'ia sobre la cresta y es $H_e = H +\frac{V_o^2}{2g}$. Normalmente la velocidad de aproximaci\'on al vertedero $V_o$ es pequeña, por lo que $H_e \approx H$.
+
+Para determinar $C$ es necesario determinar primero $C_d$ para la $H_d$ (ver figura~\ref{fig720}a). $C$ es determinado para otro $H$ con base en la figura~\ref{fig720}b. 
+% Chau fig 7-20
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{fig720.jpeg}
+    \caption{Coeficientes de descarga en aliviadero de excesos.}
+    \label{fig720}
+\end{figure}
+
+
+La $L_e$, la cual es la longitud sin tener en cuenta pilas y otras estructuras, se calcula como:
+\begin{equation}
+    L_e = L_n - 2\left( N k_p + k_a \right) H_e 
+    \label{eq27}
+\end{equation}
+donde $L_n$ es la longitud total del aliviadero, $k_p$ es el coeficiente de pila y $k_a$ es un coeficiente de contracci\'on por estribos. En muchos casos, $k_a$ es pequeño y puede ser despreciado. $k_p$ se determina a trav\'es de la figura~\ref{fig721}.
+% Chau fig 7-21
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{fig721.jpeg}
+    \caption{Coeficientes de pilas, $k_p$.}
+    \label{fig721}
+\end{figure}
+
+\subsubsection{Perfil de la l\'amina de agua}
+El perfil de la l\'amina de agua debe encajar entre las paredes del aliviadero (ver figura~\ref{fig722}).
+% Chau fig 7-22
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{fig722.jpeg}
+    \caption{Perfiles de la l\'amina de agua.}
+    \label{fig722}
+\end{figure}
+
+\subsubsection{Canal de descarga}
+El canal de descarga tiene pendientes entre el 0.8H:1V a 0.6H:1V por lo que aguas abajo de la cresta, se presenta un flujo turbulento completamente desarrollado en donde ingresa gran cantidad de aire y por lo tanto una expansi\'on del flujo. El U.S. Army Corps of Engineers recomienda incrementar la profundidad del flujo en un 20\% para efectode diseño del canal. Un dato importante es la velocidad al final del canal, a la entrada de la estructura de disipacion. Esta se puede estimar de forma aproximada a partir de:
+\begin{equation}
+    z_1 + y_1 = z_2 + y_2 + frac{V_2^2}{2g} + \Delta E
+    \label{eq28}
+\end{equation}
+
+donde $z_1$ es la cota de la cresta, $y_1$ es la profundidad del agua sobre la cresta, $z_2$ es la cota del fondo del canal al final, $y_2$ es la profundidad del agua al final del canal, $V$ es la velocidad del flujo al final del canal y $\Delta E$ son las p\'erdidas de energ\'ia iguales a $\Delta E = 0.05\left(z_1 + y_1 - z_2 - y_2\right)$ o $\Delta E = 0.1\left(z_1 + y_1 - z_2 - y_2\right)$. De la ecuaci\'on anterior, es posible despejar $V_2$.
 
 
 % REFERENCES
