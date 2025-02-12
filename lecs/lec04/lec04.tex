@@ -512,6 +512,179 @@ El canal de descarga tiene pendientes entre el 0.8H:1V a 0.6H:1V por lo que agua
 
 donde $z_1$ es la cota de la cresta, $y_1$ es la profundidad del agua sobre la cresta, $z_2$ es la cota del fondo del canal al final, $y_2$ es la profundidad del agua al final del canal, $V$ es la velocidad del flujo al final del canal y $\Delta E$ son las p\'erdidas de energ\'ia iguales a $\Delta E = 0.05\left(z_1 + y_1 - z_2 - y_2\right)$ o $\Delta E = 0.1\left(z_1 + y_1 - z_2 - y_2\right)$. De la ecuaci\'on anterior, es posible despejar $V_2$.
 
+\section{Culverts}
+Estas son estructuras que sirven para conducir el flujo a trav\'es de un paso subterraneo como por ejemplo en el paso de una via. Estas estructuras son conductos cerrados, de forma circular o de cajon. Aparte de las p\'erdidas de energi\'ia debido a la fricci\'on dentro del \emph{culvert}, existen p\'erdidas a la entrada de este que dependen de la forma de la entrada (ver figura~\ref{fig825}).
+% French fig 8-25
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{fig825.jpeg}
+    \caption{Flujo a trav\'es de un box-culvert (tomado de \cite{French}).}
+    \label{fig825}
+\end{figure}
+
+El flujo a trav\'es de un \emph{culvert} se clasifica en seis tipos dependiendo de el nivel del flujo antes y despu\'es de la estructura (ver figura~\ref{fig826}). Note que en esta figura: $D$ es la m\'axima dimension vertical del culvert, $y_1$ es la profundidad del flujo aguas arriba del culvert, $y_c$ es la profundidad cr\'itica, $z$ es la altura de el fondo del culvert a la entrada con respecto al nivel del fondo en la salida, y $y_4$ es la profundidad del flujo aguas abajo del culvert. 
+% French fig 8-26
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{fig826.jpeg}
+    \caption{Tipos de flujo a trav\'es de un culvert (tomado de \cite{French}).}
+    \label{fig826}
+\end{figure}
+
+En la figura~\ref{fig826} se presentan las curvas de caudal vs profundidad $Q=f(y)$ para cada uno de los tipos en donde $C_d$ es el coeficiente de descarga, $A_c$ es el area para la profundidad cr\'itica, $\bar{u_1}$ velocidad promedio aguas arriba, $\alpha_1$ coeficiente de energ\'ia cin\'etica para la velocidad aguas arriba, $h_{f_{1-2}} = \frac{L_w Q^2}{K_1 K_c}$ es la p\'erdida de energi\'ia desde una secci\'on aguas arriba hasta la secci\'on de entrada al culvert, $L_w$ es la distancia desde la secci\'on aguas arriba hasta la entrada, $K_1$ es el factor de secci\'on $\frac{C_o}{n} A R^{2/3}$ en la secci\'on aguas arriba, $K_c$ es el factor de secci\'on para $y_c$, $h_{f_{2-3}} = \frac{L Q^2}{K_2 K_3}$ es la p\'erdida de energi\'ia lo largo del culvert, y $L$ es la longitud del culvert. 
+
+\subsection*{Flujo tipo 1}
+$y_c$ ocurre a la entrada del culvert. Para que este flujo ocurra, se debe cumplir:
+\begin{itemize}
+    \item $y_1/D < 1.5$ 
+    \item $S_o > S_c$
+    \item $h_4 < y_c$
+\end{itemize}
+
+\subsection*{Flujo tipo 2}
+$y_c$ ocurre a la salida del culvert. Para que este flujo ocurra, se debe cumplir:
+\begin{itemize}
+    \item $y_1/D < 1.5$ 
+    \item $S_o < S_c$
+    \item $h_4 < y_c$
+\end{itemize}
+
+\subsection*{Flujo tipo 3}
+Ocurre flujo gradualmente variado a lo largo del culvert y el flujo es subcr\'itico. Para que este flujo ocurra, se debe cumplir:
+\begin{itemize}
+    \item $y_1/D < 1.5$ 
+    \item $h_4 > y_c$ 
+\end{itemize}
+
+\subsection*{Flujo tipo 4}
+El culvert trabaja a presi\'on y el caudal se puede estimar al aplicar la ecuaci\'on de energ\'ia entre las secciones aguas arriba y aguas abajo. Las p\'erdidas de energ\'ia a la entrada y a lo largo del culvert se desprecian usualmente. Las p\'erdidas debido a la expansi\'on a la salida se calcula como $h_3 - h_4$ 
+
+\subsection*{Flujo tipo 5}
+El flujo es supercr\'itico y $y_1/D >= 1.5$. 
+
+
+\subsection*{Flujo tipo 6}
+En este flujo $y_1/D >= 1.5$, el culvert luce lleno pero la salida del culvert no esta sumergida.  
+
+Para calcular el caudal que pasa a traves del culvert, es necesario definir el $n$ de Manning que depende del material y del di\'ametro del culvert (ver tablas ~\ref{tab1}, ~\ref{tab2} y ~\ref{tab3}).
+% French tab 8.16
+\begin{table}[h!]
+\centering
+\begin{tabular}{c c}
+ \hline
+ Diameter (ft) & Manning's $n$ \\ [0.5ex]
+ \hline\hline
+ 1 & 0.027 \\
+ 2 & 0.025 \\
+ 3-4 & 0.024 \\
+ 5-7 & 0.023 \\
+ 8 & 0.022 \\
+\hline
+\end{tabular}
+\caption{Coeficientes de rugosidad de Manning para acero corrugado estandard (tomado de \cite{French}).}
+\label{tab1}
+\end{table}
+
+% French tab 8.17
+\begin{table}[h!]
+\centering
+\begin{tabular}{c c}
+ \hline
+ Diameter (ft) & Manning's $n$ \\ [0.5ex]
+ \hline\hline
+ 5-6 & 0.034 \\
+ 7-8 & 0.033 \\
+ 9-11 & 0.032 \\
+ 12-13 & 0.031 \\
+ 14-15 & 0.030 \\
+ 16-18 & 0.029 \\
+ 19-20 & 0.028 \\
+ 21-22 & 0.027 \\
+\hline
+\end{tabular}
+\caption{Coeficientes de rugosidad de Manning para culvert en acero construido en sitio (tomado de \cite{French}).}
+\label{tab2}
+\end{table}
+
+% French tab 8.18
+\begin{table}[h!]
+\centering
+\begin{tabular}{c c}
+ \hline
+ Concrete conditions (ft) & Manning's $n$ \\ [0.5ex]
+ \hline\hline
+ Very smooth & 0.010 \\
+ Smooth & 0.011-0.015 \\
+ Ordinary field construction & 0.012-0.015 \\
+ Badly spalled & 0.015-0.020 \\
+\hline
+\end{tabular}
+\caption{Coeficientes de rugosidad de Manning para culverts en concreto (tomado de \cite{French}).}
+\label{tab3}
+\end{table}
+
+La determinaci\'on de $C_d$, se ha realizado a trav\'es de ensayos de laboratorio. $C_d$ depende de la forma y tamaño de la entrada al box culvert. Para determinar su valor, se ha agrupado el tipo de flujo a trav\'es del culvert de la siguiente manera:
+
+\begin{itemize}
+    \item \emph{Flujos 1, 2 y 3}: El valor de $C_d$ para entradas bruscas (cuadradas) se obtiene con base en $y_1/D$ (ver figura~\ref{fig827}). Sin embargo, el valor de $C_d$ se debe corregir por un factor que depende de la forma de la entrada. Se multiplica por $k_r$ para entradas redondeadas (ver figura~\ref{fig828}) y por $k_w$ para entradas con transici\'on (ver figura~\ref{fig829}).
+% French fig 8-27
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{fig827.jpeg}
+    \caption{Valores de $C_d$ para flujos tipo 1, 2 y 3 en culverts (tomado de \cite{French}).}
+    \label{fig827}
+\end{figure}
+% French fig 8-28
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{fig828.jpeg}
+    \caption{Valores de $k_r$ para entradas redondeadas (tomado de \cite{French}).}
+    \label{fig828}
+\end{figure}
+% French fig 8-29
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{fig829.jpeg}
+    \caption{Valores de $k_w$ para entradas en transici\'on (tomado de \cite{French}).}
+    \label{fig829}
+\end{figure}
+
+$C_d$ tambi\'en puede ser obtenido de graficas a partir del numero de Froude a la salida del culvert (secci\'on 3). $C_d$ debe ser corregido dependiendo de la forma de la entrada al culvert. 
+
+\item \emph{Flujos 4 y 6}: $C_d$ puede ser estimado con base en la tabla~\ref{tab4}. 
+% French tab 8.21
+\begin{table}[h!]
+\centering
+\begin{tabular}{c c}
+ \hline
+ $r/b$, $w/b$, $w/D$ o $r/D$ & $C_d$ \\ [0.5ex]
+ \hline\hline
+ 0 & 0.84 \\
+ 0.02 & 0.88 \\
+ 0.04 & 0.91 \\
+ 0.06 & 0.94 \\
+ 0.08 & 0.96 \\
+ 0.10 & 0.97 \\
+ 0.12 & 0.98 \\
+\hline
+\end{tabular}
+\caption{$C_d$ para flujo tipo 4 y 6 en un culvert (tomado de \cite{French}).}
+\label{tab4}
+\end{table}
+
+Con base en la forma de la entrada, los valores de $C_d$ tambi\'en se puede establecer. 
+
+\item \emph{Flujo tipo 5}: El valor de $C_d$ para culverts se puede determinar de la figura~\ref{fig822}.
+% French tabla 8-22
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{fig822.jpeg}
+    \caption{Valores de $C_d$ para culvert con flujo tipo 5 (tomado de \cite{French}).}
+    \label{fig822}
+\end{figure}
+
+\end{itemize}
+
 
 % REFERENCES
 \bibliographystyle{plain} % We choose the "plain" reference style
