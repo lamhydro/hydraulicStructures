@@ -21,7 +21,7 @@
 		\large	Facultad de Ingeniería	\par
 	% \large \textbf{Taller propiedades de los fluidos}	\par
     \large \textbf{Laboratorio No. 1 \\ Resalto Hidráulico}	\par
-} %%%%% NOMBRE DEL PROFESOR 
+} Prof. Luis Alejandro Morales, Ph.D.
 	\end{center}
 \end{minipage}
 \par
@@ -45,13 +45,13 @@
 
 \section{Objetivo}
 
-En términos generales, este laboratorio tiene como fin estudiar el flujo gradualmente variado (FGV) y el comportamiento del resalto hidráulico, a continuación algunos objetivos específicos:
+En términos generales, este laboratorio tiene como fin estudiar el flujo gradualmente variado (FGV) y el comportamiento del resalto hidráulico. A continuación algunos objetivos específicos:
 
 \begin{itemize}
 
-    \item Calcular y dibujar el perfil de flujo generado en el resalto bajo las condiciones impuestas mediante la medición experimental de las profundidades con el limnímetro.
+    \item Calcular y dibujar los perfiles de flujo generado antes y desp\'ues del resalto bajo las condiciones impuestas. Comparar los resultados mediante la medición experimental de las profundidades con el limnímetro.
     
-    \item Calcular el perfil teórico con un valor de manning de $n=0.009$, aplicando métodos de cálculo de $FGV$ cómo el método del paso estándar para encontrar el perfil, hallando el valor de la profundidad crítica y las profundidades a las diferentes distancias.
+    \item Calcular el perfil teórico con un valor de manning de $n=0.009$ (valor aproximado para el materia del canal), aplicando métodos de cálculo de $FGV$ cómo el método del paso estándar para encontrar el perfil. Para esto es necesario tambi\'en hallar el valor de la profundidad crítica y normal.
     
     \item Comparar los perfiles obtenidos en los dos literales anteriores y en caso de diferir, ajustar el n de manning para que los perfiles coincidan, luego consultar en la literatura a que material correspondería dicho coeficiente.
 
@@ -62,20 +62,7 @@ En términos generales, este laboratorio tiene como fin estudiar el flujo gradua
 
 \section{Metodología}
 
-Se dispondrá de un canal rectangular de paredes de vidrio de $31cm$ de ancho, dicho canal se alimenta mediante un tanque de aquietamiento al conecta una tubería proveniente de un tanque de nivel constante, el caudal a utilizar se regula mediante una válvula colocada en la tubería. \vspace{1ex}
-
-El tanque volumétrico será utilizado para el cálculo del caudal que pasara por la compuerta, este valor se conoce midiendo el desplazamiento de la cinta y el tiempo que transcurre en dicho desplazamiento (Figura \ref{fig:cinta}). 
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.19\linewidth]{Images/cinta.png}
-    \caption{Cinta para la medición del caudal.}
-    \label{fig:cinta}
-\end{figure}
-
-\newpage
-
-A lo largo del canal se encuentra un limnímetro montado en un riel desplazable a lo largo del canal, este instrumento será el que permitirá las medidas de las profundidades a lo largo del canal. El esquemático del montaje anterior se evidencia en las imágenes \ref{fig:esqpdf} y \ref{fig:esqreal}.
+Se dispondrá de un canal rectangular horizontal de paredes de vidrio de $31cm$ de ancho, dicho canal se alimenta mediante un tanque de aquietamiento que esta  conectado a una tubería proveniente de un tanque de nivel constante. El caudal que transporta el canal se regula mediante una válvula colocada en la tubería (ver figuras ~\ref{fig:esqpdf} y ~\ref{fig:esqreal}).
 
 \begin{figure}[h]
     \centering
@@ -91,19 +78,32 @@ A lo largo del canal se encuentra un limnímetro montado en un riel desplazable 
     \label{fig:esqreal}
 \end{figure}
 
-Para producir y controlar el resalto hidráulico se debe manipular la manija que se encuentra al final del canal (de izquierda a derecha) en la parte superior, con el fin de graduar la compuerta dispuesta al final del canal. \vspace{2ex}
+El tanque volumétrico será utilizado para el cálculo del caudal que pasar\'a por la compuerta. Este valor se conoce midiendo el desplazamiento de la cinta y el tiempo que transcurre en dicho desplazamiento (Figura \ref{fig:cinta}). 
 
-Para el caso de las mediciones con el limnímetro considerar un cero de 5.2 cm a la salida de la primera compuerta (aguas arriba) y un cero de 4.8 cm al final del canal (aguas abajo). Las profundidades de flujo se obtienen restando el cero (calculado de acuerdo con la distancia) al valor medido con el limnímetro.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.19\linewidth]{Images/cinta.png}
+    \caption{Cinta para la medición del caudal.}
+    \label{fig:cinta}
+\end{figure}
 
+%\newpage
 
-\newpage
+A lo largo del canal se encuentra un limnímetro montado en un riel desplazable. Este instrumento será el que permitirá las medidas de las profundidades a lo largo del canal. El esquema de este montaje se muestrar en la figura~\ref{limni}.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.25\linewidth]{Images/limnimetro.png}
     \caption{Limnímetro a utilizar para la medición de la lámina de agua.}
-    \label{}
+    \label{limni}
 \end{figure}
+
+Para producir y controlar el resalto hidráulico se debe manipular la manija que se encuentra al final del canal (de izquierda a derecha) en la parte superior, con el fin de graduar la compuerta dispuesta al final del canal. 
+
+Para el caso de las mediciones con el limnímetro considerar un cero de 5.2 cm a la salida de la primera compuerta (aguas arriba) y un cero de 4.8 cm al final del canal (aguas abajo). Las profundidades de flujo se obtienen restando el cero (calculado de acuerdo con la distancia) al valor medido con el limnímetro.
+
+
+%\newpage
 
 
 \section{Ecuaciones y resultados}
@@ -111,7 +111,7 @@ Para el caso de las mediciones con el limnímetro considerar un cero de 5.2 cm a
 
 \begin{enumerate}
 
-    \item Para la medición del caudal, se toma una medición inicial con la cinta (fig \ref{fig:cinta}), y luego una final después de 90 segundos, luego la resta entre estas dos mediciones corresponderá a la medición del tanque, se recomienda tomar 4 de estas mediciones y promediarlas, de modo qué:
+    \item Para la medición del caudal, se toma una medición inicial con la cinta (fig \ref{fig:cinta}), y luego una final después de 90 segundos, luego la resta entre estas dos mediciones corresponderá a la medición del tanque; se recomienda tomar 4 de estas mediciones y promediarlas, de modo qué:
 
     $$dif.alturas_1=med_{t=0s}-med_{t=90s}=alt.final_{1}$$
 
@@ -129,31 +129,35 @@ Para el caso de las mediciones con el limnímetro considerar un cero de 5.2 cm a
     
     \item Con los datos geométricos del canal y el valor de n de manning $(n=0.009)$, aplicar el método del paso estándar para encontrar el perfil, se recomienda utilizar un $\Delta x$ de $0.1m$ o $0.2m$.
 
-    $$y_{i+1}=y_{i}+\dfrac{1}{6}(k_1+2k_2+2k_3+k_4)\Delta x$$
+    %$$y_{i+1}=y_{i}+\dfrac{1}{6}(k_1+2k_2+2k_3+k_4)\Delta x$$
 
     
     \item Aplicar las ecuaciones de profundidad subsecuente
 
     $$\dfrac{y_1}{y_2}=\dfrac{1}{2}\left(\sqrt{1+8Fr^2_2}-1\right)$$    
 
-\newpage
+%\newpage
 
     $$\dfrac{y_2}{y_1}=\dfrac{1}{2}\left(\sqrt{1+8Fr^2_1}-1\right)$$
     
-    \item Hallar la longitud del resalto mediante el siguiente gráfico:
+\item Hallar la longitud del resalto mediante la figura~\ref{resh}.
 
     \begin{figure}[h]
         \centering
         \includegraphics[width=0.9\linewidth]{Images/resalto.png}
         \caption{Relación entre las profundidades subsecuentes y la longitud del resalto.}
-        \label{}
+        \label{resh}
     \end{figure}
 
-    Y comprobar si dicho valor es similar al obtenido con la expresión:
+\item Comprobar si el valor tomado de la figura~\ref{resh} es similar al obtenido con la expresión:
 
     $$L=5(y_2-y_1)$$
 
-    \item Comparar los perfiles trazados con los valores teóricos y experimentales, junto a los valores de L y discutirlos.
+    \item Comparar los perfiles trazados con los valores teóricos y experimentales. Ajustar el valor de $n$.
+
+    \item Comparar los valores medidos con los calculados para el resalto hidr\'aulico.
+
+    \item Discutir los resultados.
 \end{enumerate}
 
 
@@ -196,7 +200,6 @@ El informe de laboratorio debe contener las siguientes secciones:
     
     \item \textbf{Referencias:} Incluir las referencias consultadas.
 \end{enumerate}
-
 
 \end{document}
 
